@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Bakery</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-gray-100 text-gray-800">
+
+  <!-- Top Strip -->
+  <div class="bg-gradient-to-r from-teal-800 to-teal-500 text-yellow-300 text-sm text-right p-2">
+    <p class="text-xs md:text-sm"><strong class="block md:inline">JUST ORDER, IT WILL BE DELIVERED</strong></p>
+  </div>
+
+  <!-- Header -->
+  <header class="bg-white border-b border-gray-300 p-4 space-y-2">
+    <div class="flex justify-center space-x-4 text-sm font-semibold flex-wrap text-center">
+      <a href="index.html" class="text-gray-700 hover:text-teal-600">HOME</a>
+      <a href="category_fruits.html" target="_blank" class="text-gray-700 hover:text-teal-600">FRUITS</a>
+      <a href="category-vegetables.html" target="_blank" class="text-gray-700 hover:text-teal-600">VEGETABLES</a>
+      <a href="category-beverages.html" target="_blank" class="text-gray-700 hover:text-teal-600">BEVERAGES</a>
+      <a href="category-dairy.html" target="_blank" class="text-gray-700 hover:text-teal-600">DAIRY</a>
+      <a href="category-fish&seafood.html" target="_blank" class="text-gray-700 hover:text-teal-600">SEAFOOD</a>
+      <a href="category-bakery.html" target="_blank" class="text-gray-700 hover:text-teal-600">BAKERY</a>
+      <a href="category-healthcare.html" target="_blank" class="text-gray-700 hover:text-teal-600">HEALTHCARE</a>
+      <a href="category-petcare.html" target="_blank" class="text-gray-700 hover:text-teal-600 ">PETCARE</a>
+      <a href="category-pasta&rice&cereal.html" target="_blank" class="text-gray-700 hover:text-teal-600 ">RICE & PASTA</a>
+    </div>
+    <div class="flex items-center justify-between gap-4 mt-2">
+      <img src="logo-2078018_1280.png" alt="Logo" class="w-20 h-20">
+      <div class="flex flex-1 items-center gap-2">
+        <input type="text" placeholder="Search products" class="flex-1 px-4 py-2 border rounded-md border-gray-300 focus:ring-2 focus:ring-teal-500" />
+        <button class="px-4 py-2 bg-teal-700 hover:bg-teal-600 text-white rounded-md">SEARCH</button>
+      </div>
+      <div class="flex items-center space-x-4 relative">
+        <div class="relative group">
+          <div class="cursor-pointer font-medium flex items-center gap-1">👤 Account ⌄</div>
+          <div class="absolute right-0 top-full mt-2 hidden group-hover:block bg-white shadow-lg border rounded-lg w-44 z-50">
+            <button onclick="openLoginModal()" class="w-full text-left px-4 py-2 text-sm hover:bg-yellow-300">SIGN IN</button>
+            <a href="#" class="block px-4 py-2 text-sm hover:bg-yellow-300">👤 My Account</a>
+            <a href="#" class="block px-4 py-2 text-sm hover:bg-yellow-300">📦 Orders</a>
+            <a href="#" class="block px-4 py-2 text-sm hover:bg-yellow-300">❤️ Saved Items</a>
+          </div>
+        </div>
+        <div class="cursor-pointer">❓ Help</div>
+        <a href="cart.html" target="_blank" class="cursor-pointer hover:underline text-teal-700">🛒 Cart</a>
+      </div>
+    </div>
+  </header>
+
+  <!-- Page Banner -->
+  <div class="bg-teal-700 text-white text-center py-4">
+    <h1 class="text-2xl font-bold">Bakery</h1>
+    <p class="text-sm">Freshly baked treats for everyone</p>
+  </div>
+
+  <!-- Product Grid -->
+  <section class="p-6 grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-4">
+    <div class="bg-white rounded-lg shadow-md p-4 hover:shadow-lg">
+      <a href="product4.html"><img src="images/white bread.webp" alt="White Bread" class="w-full h-32 object-cover mb-2 rounded"></a>
+      <h3 class="text-lg font-semibold">White Bread</h3>
+      <p class="text-sm text-gray-600">Sliced loaf</p>
+      <p class="text-teal-700 font-bold">GHS 21.00</p>
+      <button 
+        class="add-to-cart bg-teal-700 text-white px-4 py-1 rounded hover:bg-teal-600 text-sm"
+        data-name="White Bread Sliced loaf"
+        data-price="21.00">Add to Cart</button>
+    </div>
+    <div class="bg-white rounded-lg shadow-md p-4 hover:shadow-lg">
+      <a href="product5.html"></a> <img src="images/brownbreads.jpeg" alt="Brown Bread" class="w-full h-32 object-cover mb-2 rounded"></a>
+      <h3 class="text-lg font-semibold">Brown Bread</h3>
+      <p class="text-sm text-gray-600">Whole wheat</p>
+      <p class="text-teal-700 font-bold">GHS 12.00</p>
+      <button 
+        class="add-to-cart bg-teal-700 text-white px-4 py-1 rounded hover:bg-teal-600 text-sm"
+        data-name="Brown Bread Whole Wheat"
+        data-price="12.00">Add to Cart</button>
+    </div>
+    <div class="bg-white rounded-lg shadow-md p-4 hover:shadow-lg">
+      <img src="images/Butter Croissant.webp" alt="Butter Croissant" class="w-full h-32 object-cover mb-2 rounded">
+      <h3 class="text-lg font-semibold">Butter Croissant</h3>
+      <p class="text-sm text-gray-600">Pack of 2</p>
+      <p class="text-teal-700 font-bold">GHS 15.00</p>
+      <button 
+        class="add-to-cart bg-teal-700 text-white px-4 py-1 rounded hover:bg-teal-600 text-sm"
+        data-name="Butter Croissant 2 packs"
+        data-price="15.00">Add to Cart</button>
+    </div>
+    <div class="bg-white rounded-lg shadow-md p-4 hover:shadow-lg">
+      <img src="images/chocolatecake.webp" alt="Chocolate Cake" class="w-full h-32 object-cover mb-2 rounded">
+      <h3 class="text-lg font-semibold">Chocolate Cake</h3>
+      <p class="text-sm text-gray-600">500g</p>
+      <p class="text-teal-700 font-bold">GHS 40.00</p>
+      <button 
+        class="add-to-cart bg-teal-700 text-white px-4 py-1 rounded hover:bg-teal-600 text-sm"
+        data-name="Chocolate Cake 500g"
+        data-price="40.00">Add to Cart</button>
+    </div>
+    <div class="bg-white rounded-lg shadow-md p-4 hover:shadow-lg">
+      <img src="images/meatpie.webp" alt="Meat Pie" class="w-full h-32 object-cover mb-2 rounded">
+      <h3 class="text-lg font-semibold">Meat Pie</h3>
+      <p class="text-sm text-gray-600">Pack of 4</p>
+      <p class="text-teal-700 font-bold">GHS 20.00</p>
+      <button 
+        class="add-to-cart bg-teal-700 text-white px-4 py-1 rounded hover:bg-teal-600 text-sm"
+        data-name="Meat Pie 4pcs"
+        data-price="20.00">Add to Cart</button>
+    </div>
+    <div class="bg-white rounded-lg shadow-md p-4 hover:shadow-lg">
+      <img src="images/donuts.webp" alt="Donuts" class="w-full h-32 object-cover mb-2 rounded">
+      <h3 class="text-lg font-semibold">Donuts</h3>
+      <p class="text-sm text-gray-600">Assorted, 6pcs</p>
+      <p class="text-teal-700 font-bold">GHS 18.00</p>
+      <button 
+        class="add-to-cart bg-teal-700 text-white px-4 py-1 rounded hover:bg-teal-600 text-sm"
+        data-name="Assorted Donuts 6pcs"
+        data-price="18.00">Add to Cart</button>
+    </div>
+    <div class="bg-white rounded-lg shadow-md p-4 hover:shadow-lg">
+      <img src="images/coconut cookies.webp" alt="Coconut Cookies" class="w-full h-32 object-cover mb-2 rounded">
+      <h3 class="text-lg font-semibold">Coconut Cookies</h3>
+      <p class="text-sm text-gray-600">Bag, 250g</p>
+      <p class="text-teal-700 font-bold">GHS 12.00</p>
+      <button 
+        class="add-to-cart bg-teal-700 text-white px-4 py-1 rounded hover:bg-teal-600 text-sm"
+        data-name="Coconut Cookies 250g"
+        data-price="12.00">Add to Cart</button>
+    </div>
+    <div class="bg-white rounded-lg shadow-md p-4 hover:shadow-lg">
+      <img src="images/cheese rolls.webp" alt="Cheese Rolls" class="w-full h-32 object-cover mb-2 rounded">
+      <h3 class="text-lg font-semibold">Cheese Rolls</h3>
+      <p class="text-sm text-gray-600">Pack of 3</p>
+      <p class="text-teal-700 font-bold">GHS 14.00</p>
+      <button 
+        class="add-to-cart bg-teal-700 text-white px-4 py-1 rounded hover:bg-teal-600 text-sm"
+        data-name="Cheese Rolls 3pcs"
+        data-price="14.00">Add to Cart</button>
+    </div>
+    <div class="bg-white rounded-lg shadow-md p-4 hover:shadow-lg">
+      <img src="images/Mini Baguette.webp" alt="Mini Baguette" class="w-full h-32 object-cover mb-2 rounded">
+      <h3 class="text-lg font-semibold">Mini Baguette</h3>
+      <p class="text-sm text-gray-600">2 pieces</p>
+      <p class="text-teal-700 font-bold">GHS 9.00</p>
+      <button 
+        class="add-to-cart bg-teal-700 text-white px-4 py-1 rounded hover:bg-teal-600 text-sm"
+        data-name="Mini Baguette 2pcs"
+        data-price="9.00">Add to Cart</button>
+    </div>
+    <div class="bg-white rounded-lg shadow-md p-4 hover:shadow-lg">
+      <img src="images/Vannila muffins.webp" alt="Vanilla Muffin" class="w-full h-32 object-cover mb-2 rounded">
+      <h3 class="text-lg font-semibold">Vanilla Muffin</h3>
+      <p class="text-sm text-gray-600">Each</p>
+      <p class="text-teal-700 font-bold">GHS 6.00</p>
+      <button 
+        class="add-to-cart bg-teal-700 text-white px-4 py-1 rounded hover:bg-teal-600 text-sm"
+        data-name="Vanilla Muffin"
+        data-price="6.00">Add to Cart</button>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="bg-teal-900 text-yellow-100 text-sm text-center p-4 mt-8">
+    <div class="space-y-2">
+      <p>&copy; 2025 Akpoviri Grocery Hub. All rights reserved.</p>
+      <div class="flex justify-center space-x-4 text-white">
+        <a href="https://wa.me/your-number" target="_blank" class="hover:underline">WhatsApp</a>
+        <a href="https://x.com/yourhandle" target="_blank" class="hover:underline">X</a>
+        <a href="https://facebook.com/yourpage" target="_blank" class="hover:underline">Facebook</a>
+        <a href="https://instagram.com/yourhandle" target="_blank" class="hover:underline">Instagram</a>
+      </div>
+    </div>
+  </footer>
+
+
+  <script>
+    // Function to get cart from localStorage
+    function getCart() {
+      return JSON.parse(localStorage.getItem('cart')) || [];
+    }
+  
+    // Function to save cart to localStorage
+    function saveCart(cart) {
+      localStorage.setItem('cart', JSON.stringify(cart));
+    }
+  
+    // Add click event to all Add to Cart buttons
+    document.querySelectorAll('.add-to-cart').forEach(button => {
+      button.addEventListener('click', () => {
+        const name = button.getAttribute('data-name');
+        const price = parseFloat(button.getAttribute('data-price'));
+  
+        let cart = getCart();
+  
+        // Check if item already exists
+        const existingItem = cart.find(item => item.name === name);
+        if (existingItem) {
+          existingItem.quantity += 1;
+        } else {
+          cart.push({ name, price, quantity: 1 });
+        }
+  
+        saveCart(cart);
+        alert(`${name} added to cart!`);
+      });
+    });
+  </script>
+
+</body>
+</html>

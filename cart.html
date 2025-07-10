@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Shopping Cart</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-gray-100 text-gray-800">
+
+  <header class="bg-white shadow-md p-4 flex justify-between items-center">
+    <h1 class="text-xl font-bold text-teal-700">🛒 Your Cart</h1>
+    <a href="index.html" class="text-sm text-blue-600 hover:underline">← Continue Shopping</a>
+  </header>
+
+  <main class="p-6 space-y-6 max-w-4xl mx-auto">
+    <div id="cart-items" class="space-y-4"></div>
+
+    <div class="flex justify-between items-center mt-6">
+      <button onclick="clearCart()" class="px-4 py-2 bg-red-600 text-white rounded hover:bg-red-700">Clear All</button>
+      <div class="text-xl font-semibold">
+        Total: GH₵ <span id="cart-total">0.00</span>
+      </div>
+      <button onclick="checkout()" class="px-6 py-2 bg-teal-700 text-white rounded hover:bg-teal-600">Checkout</button>
+    </div>
+  </main>
+
+  <script>
+    function getCart() {
+      return JSON.parse(localStorage.getItem('cart')) || [];
+    }
+
+    function saveCart(cart) {
+      localStorage.setItem('cart', JSON.stringify(cart));
+    }
+
+    function renderCart() {
+      const cart = getCart();
+      const cartContainer = document.getElementById('cart-items');
+      cartContainer.innerHTML = '';
+      let total = 0;
+
+      cart.forEach((item, index) => {
+        total += item.price * item.quantity;
+
+        const itemEl = document.createElement('div');
+        itemEl.className = 'flex justify-between items-center bg-white p-4 rounded shadow';
+
+        itemEl.innerHTML = `
+          <div>
+            <h2 class="font-semibold">${item.name}</h2>
+            <p class="text-sm text-gray-600">GH₵ ${item.price.toFixed(2)}</p>
+          </div>
+          <div class="flex items-center space-x-2">
+            <button onclick="updateQuantity(${index}, -1)" class="px-2 bg-gray-200 hover:bg-gray-300 rounded">−</button>
+            <span>${item.quantity}</span>
+            <button onclick="updateQuantity(${index}, 1)" class="px-2 bg-gray-200 hover:bg-gray-300 rounded">+</button>
+          </div>
+          <div class="text-sm font-semibold">GH₵ ${(item.price * item.quantity).toFixed(2)}</div>
+          <button onclick="deleteItem(${index})" class="text-red-500 hover:text-red-700">🗑</button>
+        `;
+
+        cartContainer.appendChild(itemEl);
+      });
+
+      document.getElementById('cart-total').textContent = total.toFixed(2);
+    }
+
+    function updateQuantity(index, delta) {
+      let cart = getCart();
+      cart[index].quantity += delta;
+      if (cart[index].quantity <= 0) cart.splice(index, 1);
+      saveCart(cart);
+      renderCart();
+    }
+
+    function deleteItem(index) {
+      let cart = getCart();
+      cart.splice(index, 1);
+      saveCart(cart);
+      renderCart();
+    }
+
+    function clearCart() {
+      if (confirm('Are you sure you want to clear the cart?')) {
+        localStorage.removeItem('cart');
+        renderCart();
+      }
+    }
+
+    function checkout() {
+      const cart = getCart();
+      if (cart.length === 0) {
+        alert('Your cart is empty!');
+        return;
+      }
+      alert('Thank you for your purchase!');
+      clearCart();
+    }
+
+    renderCart();
+  </script>
+</body>
+</html>

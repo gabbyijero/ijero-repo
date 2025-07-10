@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Cart Demo</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-gray-100 p-6">
+  <div class="max-w-4xl mx-auto">
+    <h1 class="text-3xl font-bold mb-6">🛍️ Product Page</h1>
+
+    <!-- PRODUCT LIST -->
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-10">
+      <div class="bg-white p-4 rounded shadow">
+        <h2 class="text-xl font-semibold">Cindy Perfume Rice 50kg</h2>
+        <p class="text-gray-600">$19.99</p>
+        <button
+          onclick="addToCart('Cindy Perfume Rice 50kg', 19.99)"
+          class="mt-3 px-4 py-2 bg-teal-600 text-white rounded hover:bg-teal-700">
+          Add to Cart
+        </button>
+      </div>
+
+      <div class="bg-white p-4 rounded shadow">
+        <h2 class="text-xl font-semibold">Golden Tree Chocolate</h2>
+        <p class="text-gray-600">$4.99</p>
+        <button
+          onclick="addToCart('Golden Tree Chocolate', 4.99)"
+          class="mt-3 px-4 py-2 bg-teal-600 text-white rounded hover:bg-teal-700">
+          Add to Cart
+        </button>
+      </div>
+    </div>
+
+    <!-- CART SUMMARY -->
+    <h2 class="text-2xl font-bold mb-4">🧾 Cart Summary</h2>
+    <div id="cartSummary" class="bg-white p-6 rounded shadow space-y-4"></div>
+  </div>
+
+  <script>
+    function loadCart() {
+      const cart = JSON.parse(localStorage.getItem('cart')) || [];
+      const container = document.getElementById('cartSummary');
+      container.innerHTML = "";
+
+      if (cart.length === 0) {
+        container.innerHTML = "<p>Your cart is empty.</p>";
+        return;
+      }
+
+      let total = 0;
+      cart.forEach((item, index) => {
+        const subtotal = item.price * item.quantity;
+        total += subtotal;
+
+        const itemDiv = document.createElement("div");
+        itemDiv.className = "border-b pb-4 mb-4";
+        itemDiv.innerHTML = `
+          <div class="flex justify-between items-center">
+            <div>
+              <h3 class="font-semibold text-lg">${item.name}</h3>
+              <p>$${item.price.toFixed(2)} each</p>
+              <label class="block mt-2">
+                Quantity:
+                <input type="number" min="1" value="${item.quantity}" class="w-16 ml-2 border rounded px-2 py-1"
+                  onchange="updateQuantity(${index}, this.value)">
+              </label>
+              <p class="mt-2 text-gray-700">Subtotal: $${subtotal.toFixed(2)}</p>
+            </div>
+            <button onclick="removeItem(${index})" class="text-red-500 hover:underline">🗑 Remove</button>
+          </div>
+        `;
+        container.appendChild(itemDiv);
+      });
+
+      const totalDiv = document.createElement("div");
+      totalDiv.className = "text-right font-bold text-xl pt-4 border-t";
+      totalDiv.textContent = `Total: $${total.toFixed(2)}`;
+      container.appendChild(totalDiv);
+    }
+
+    function addToCart(name, price) {
+      const cart = JSON.parse(localStorage.getItem('cart')) || [];
+      const item = cart.find(i => i.name === name);
+
+      if (item) {
+        item.quantity += 1;
+      } else {
+        cart.push({ name, price, quantity: 1 });
+      }
+
+      localStorage.setItem('cart', JSON.stringify(cart));
+      loadCart();
+    }
+
+    function updateQuantity(index, quantity) {
+      const cart = JSON.parse(localStorage.getItem('cart'));
+      if (quantity <= 0) return;
+      cart[index].quantity = parseInt(quantity);
+      localStorage.setItem('cart', JSON.stringify(cart));
+      loadCart();
+    }
+
+    function removeItem(index) {
+      const cart = JSON.parse(localStorage.getItem('cart'));
+      cart.splice(index, 1);
+      localStorage.setItem('cart', JSON.stringify(cart));
+      loadCart();
+    }
+
+    // Initial load
+    loadCart();
+  </script>
+</body>
+</html>

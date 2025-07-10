@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Grocery Website</title>
+  <link rel="stylesheet" href="styless.css" />
+</head>
+<body>
+
+  <div class="top-strip">
+    <!-- <p>Ijero Online Shopping </p> -->
+    <p>Just order <br><strong>IT WILL BE DELIVERED</strong></p>
+  </div>
+
+  <header class="main-header">
+    <div class="nav-links">
+      <a href="#">HOME</a>
+      <a href="#">ABOUT</a>
+      <a href="#">LOGISTICS</a>
+    </div>
+
+    <div class="header-main">
+      <div class="logo"><img src="logo-2078018_1280.png" width="80" height="80"></div>
+      <input type="text" class="search-bar" placeholder="Search products">
+      <button class="search-btn">SEARCH</button>
+
+      <div class="nav-right">
+        <div class="nav-item" onclick="openLoginModal()">👤 Account ⌄</div>
+        <div class="nav-item">❓ Help</div>
+        <div class="nav-item">🛒 Cart</div>
+      </div>
+    </div>
+  </header>
+
+  <div class="layout">
+    <aside class="sidebar">
+      <h4>🛒 Supermarket</h4>
+      <nav>
+        <a href="#">Beverages</a>
+        <a href="#">Bread & Bakery</a>
+        <a href="#">Dairy</a>
+        <a href="#">Frozen Foods</a>
+        <a href="#">Fruits</a>
+        <a href="#">Fish & Seafood</a>
+        <a href="#">Health Care</a>
+        <a href="#">Pet Care</a>
+        <a href="#">Personal Care</a>
+        <a href="#">Pasta, Rice & Cereal</a>
+        <a href="#">Vegetables</a>
+        <a href="#"> Other categories</a>
+      </nav>
+    </aside>
+
+    <main class="main-content">
+      <div class="banner-section">
+        <img src="supermarket.jpg" alt="Groceries" />
+        <div class="banner-text">Shop with us all your Groceries</div>
+        <div class="carousel-dots">
+          <span class="dot active"></span>
+          <span class="dot"></span>
+          <span class="dot"></span>
+        </div>
+      </div>
+
+      <!-- Product Grid -->
+      <section class="products">
+        <div class="section-header">
+          <h2>Rice</h2>
+          <a href="#">SEE ALL</a>
+        </div>
+        <div class="product-grid">
+          <div class="product-card">
+            <img src="mamagoldrice.jpg" alt="Mama Gold">
+            <p>Mama Gold Long Grain G...</p>
+            <span>GHC 32.10</span>
+          </div>
+          <div class="product-card">
+            <img src="fortunerice.jpg" alt="Fortune Vietnam">
+            <p>Fortune Delicious Vietnam</p>
+            <span>GHC 34.00</span>
+          </div>
+          <div class="product-card">
+            <img src="classicrice.jpg" alt="Classic Rice">
+            <p>Fortune Classic Rice - 5kg</p>
+            <span>GHC 37.80</span>
+          </div>
+          <div class="product-card">
+            <img src="lelerice.jpg" alt="Lele Thai">
+            <p>Lele Thai Jasmine Rice - 5kg</p>
+            <span>GHC 66.50</span>
+          </div>
+          <div class="product-card">
+            <img src="cindyrice.jpg" alt="Cindy Rice">
+            <p>Cindy Jasmine Rice – 5kg</p>
+            <span>GHC 47.29</span>
+          </div>
+          <div class="product-card">
+            <img src="mellicentrice.jpg" alt="Delight Rice">
+            <p>Millicent Perfume Rice – 4.5kg</p>
+            <span>GHC 37.60</span>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <aside class="info-panel">
+      <div class="info-box">
+        <h4>📞 HELP CENTRE</h4>
+        <p>How can we help you?</p>
+      </div>
+      <div class="info-box">
+        <h4>📦 TRACK YOUR ORDER</h4>
+        <p>Stay up to date</p>
+      </div>
+      <div class="call-box">
+        <p>Call to order</p>
+        <h2>029 000 0000</h2>
+      </div>
+    </aside>
+  </div>
+
+  <!-- Login Modal -->
+  <div class="modal" id="loginModal">
+    <div class="modal-content">
+      <span class="close" onclick="closeLoginModal()">&times;</span>
+      <h3>Login to Your Account</h3>
+      <input type="text" placeholder="Email" />
+      <input type="password" placeholder="Password" />
+      <button class="login-btn">Login</button>
+    </div>
+  </div>
+
+  <script>
+    function openLoginModal() {
+      document.getElementById('loginModal').style.display = 'block';
+    }
+
+    function closeLoginModal() {
+      document.getElementById('loginModal').style.display = 'none';
+    }
+
+    window.onclick = function(e) {
+      if (e.target == document.getElementById('loginModal')) {
+        closeLoginModal();
+      }
+    }
+  </script>
+</body>
+</html>

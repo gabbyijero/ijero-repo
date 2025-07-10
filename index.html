@@ -1,0 +1,1466 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Grocery Website</title>
+  <link rel="stylesheet" href="style.css" />
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script src="script.js"></script>
+</head>
+<body>
+  <div id="loader-overlay" class="fixed inset-0 bg-white z-50 flex items-center justify-center">
+    <div class="loader"></div>
+  </div>
+
+  <div class="slogan-container fixed top-0 w-full z-30">
+    <div class="slogan-track">
+      <span>Welcome to IJERO Grocery Shopping. Your One-Stop Grocery Shop.    The Heart of Your Kitchen.
+         Good Customer service, Fast Deliveries and Low Prices.  The Store That Satisfies.    Real Food, Real Savings.
+         Your Cart, Your Choices.  Delivering Deliciousness Daily.
+        </span>
+    </div>
+  </div>
+
+  <header class="main-header fixed top-7 w-full z-50 bg-white shadow-md">
+    <div class="flex justify-center space-x-4 text-sm font-semibold flex-wrap text-center">
+      <a href="index.html" class="text-gray-700 hover:text-teal-600">HOME</a>
+      <a href="category_fruits.html" target="_blank" class="text-gray-700 hover:text-teal-600">FRUITS</a>
+      <a href="category-vegetables.html" target="_blank" class="text-gray-700 hover:text-teal-600">VEGETABLES</a>
+      <a href="category-beverages.html" target="_blank" class="text-gray-700 hover:text-teal-600">BEVERAGES</a>
+      <a href="category-dairy.html" target="_blank" class="text-gray-700 hover:text-teal-600">DAIRY</a>
+      <a href="category-fish&seafood.html" target="_blank" class="text-gray-700 hover:text-teal-600">SEAFOOD</a>
+      <a href="category-bakery.html" target="_blank" class="text-gray-700 hover:text-teal-600">BAKERY</a>
+      <a href="category-healthcare.html" target="_blank" class="text-gray-700 hover:text-teal-600">HEALTHCARE</a>
+      <a href="category-petcare.html" target="_blank" class="text-gray-700 hover:text-teal-600 ">PETCARE</a>
+      <a href="category-pasta&rice&cereal.html" target="_blank" class="text-gray-700 hover:text-teal-600 ">RICE & PASTA</a>
+    </div>
+
+    <div class="header-main">
+      <div class="logo"><img src="logo-2078018_1280.png" width="80" height="80"></div>
+      <input type="text" class="search-bar" placeholder="Search products">
+      <button class="search-btn">SEARCH</button>
+
+      <div class="nav-right">
+        <div class="nav-item account-dropdown-toggle" onclick="toggleAccountMenu()">👤 Account ⌄
+            <div class="account-dropdown" id="accountDropdown">
+              <button onclick="openLoginModal()">SIGN IN</button>
+              <a href="#">👤 My Account</a>
+              <a href="#">📦 Orders</a>
+              <a href="#">❤️ Saved Items</a>
+            </div>
+          </div>
+          
+        <div class="nav-item">❓ Help</div>
+        <a href="cart.html" target="_blank" class="cursor-pointer hover:underline text-teal-700">🛒 Cart</a>
+      </div>
+    </div>
+  </header>
+
+  <div class="layout pt-40">
+    <aside class="sidebar">
+      <h4>🛒 Supermarket</h4>
+      <nav>
+        <a href="category-beverages.html">Beverages</a>
+        <a href="category-bakery.html">Bread & Bakery</a>
+        <a href="category-dairy.html">Dairy</a>
+        <a href="#">Frozen Foods</a>
+        <a href="category_fruits.html">Fruits</a>
+        <a href="category-fish&seafood.html">Fish & Seafood</a>
+        <a href="category-healthcare.html">Health Care</a>
+        <a href="category-petcare.html">Pet Care</a>
+        <a href="#">Personal Care</a>
+        <a href="category-pasta&rice&cereal.html">Pasta, Rice & Cereal</a>
+        <a href="category-vegetables.html">Vegetables</a>
+        <a href="#"> Other categories</a>
+      </nav>
+    </aside>
+
+    <main class="main-content ">
+      <div class="banner-section">
+        <img src="images/superstore.jpeg" class="banner-slide"   alt="Slide 1" height="100px"/>
+        <img src="images/promo1.jpeg" class="banner-slide"   alt="Slide 2" height="100px"/>
+        <img src="images/promo2.jpg" class="banner-slide"   alt="Slide 3" height="100px"/>
+        <img src="images/promo3.jpg" class="banner-slide"   alt="Slide 4" height="100px"/>
+        <img src="images/promo4.jpeg" class="banner-slide"   alt="Slide 5" height="100px"/>
+
+        <button class="arrow left" onclick="prevSlide()">&#10094;</button>
+        <button class="arrow right" onclick="nextSlide()">&#10095;</button>
+        <!-- <div class="banner-text">Shop with us all your Groceries</div> -->
+        <div class="carousel-dots">
+          <span class="dot active"></span>
+          <span class="dot"></span>
+          <span class="dot"></span>
+          <span class="dot"></span>
+          <span class="dot"></span>
+        </div>
+
+      </div>
+
+      <!-- Product Grid -->
+      <section class="products">
+        <div class="section-header">
+          <h2>Pasta, Rice & Cereal</h2>
+          <a href="category-pasta&rice&cereal.html">SEE ALL</a>
+        </div>
+        <div class="product-grid">
+          <div class="product-card">
+            <a href="images/product3.html"><img src="mamagoldrice.jpg" alt="Mama Gold Rice"></a>
+            <p>Mama Gold Long Rice</p>
+            <span>GHC 32.10</span><br><br>
+            <button 
+            class="add-to-cart bg-teal-700 text-white px-4 py-1 rounded hover:bg-teal-600 text-sm"
+            data-name="Mama Gold Long Rice"
+            data-price="32.00">Add to Cart</button>
+          </div>
+            
+          
+          <div class="product-card">
+            <img src="images/spagetti.png" alt="Spagetti">
+            <p>Italia Spagetti 500g</p>
+            <span>GHC 18.00</span><br><br>
+            <button 
+            class="add-to-cart bg-teal-700 text-white px-4 py-1 rounded hover:bg-teal-600 text-sm"
+            data-name="Italian Spagetti 500g"
+            data-price="18.00">Add to Cart</button>
+            
+            
+          </div>
+          <div class="product-card">
+            <img src="images/semolina.jpg" alt="Semolina">
+            <p>Honey Well Semolina </p>
+            <span>GHC 15.00</span><br><br>
+            <button 
+            class="add-to-cart bg-teal-700 text-white px-4 py-1 rounded hover:bg-teal-600 text-sm"
+            data-name="Honey Well Semolina 500g"
+            data-price="15.00">Add to Cart</button>
+            
+          </div>
+          <div class="product-card">
+            <img src="images/cornflakes.jpg" alt="cornflakes">
+            <p>Kelly Corn Flakes 500g</p>
+            <span>GHC 24.00</span><br><br>
+            <button 
+            class="add-to-cart bg-teal-700 text-white px-4 py-1 rounded hover:bg-teal-600 text-sm"
+            data-name="Kelly Corn Flakes 500g"
+            data-price="24.00">Add to Cart</button>
+            
+            
+          </div>
+          <div class="product-card">
+            <a href="product.html"><img src="cindyrice.jpg" alt="Cindy Rice"></a>
+            <p>Cindy Perfume Rice </p>
+            <span>GHC 47.29</span><br><br>
+            <button 
+            class="add-to-cart bg-teal-700 text-white px-4 py-1 rounded hover:bg-teal-600 text-sm"
+            data-name="Cindy Perfume Rice"
+            data-price="47.29">Add to Cart</button>
+            
+          </div>
+          <div class="product-card">
+            <img src="images/goldenmorn.jpg" alt="Golden Morn">
+            <p>Golden Morn 500g</p>
+            <span>GHC 24.00</span><br><br>
+            <button 
+            class="add-to-cart bg-teal-700 text-white px-4 py-1 rounded hover:bg-teal-600 text-sm"
+            data-name="Golden Morn 500g"
+            data-price="24.00">Add to Cart</button>
+            
+          </div>
+          <div class="product-card">
+            <img src="images/65079_2_1.jpg" alt="Instant Oat">
+            <p>Good Morning Oats </p>
+            <span>GHC 20.00</span><br><br>
+            <button 
+            class="add-to-cart bg-teal-700 text-white px-4 py-1 rounded hover:bg-teal-600 text-sm"
+            data-name="Good Morning Oats 500g"
+            data-price="20.00">Add to Cart</button>
+            
+          </div>
+          <div class="product-card">
+            <a href="product.html"><img src="images/mellicentrice.jpg" alt="millicent Rice"></a>
+            <p>Millicent Long Rice </p>
+            <span>GHC 37.60</span><br><br>
+            <button 
+            class="add-to-cart bg-teal-700 text-white px-4 py-1 rounded hover:bg-teal-600 text-sm"
+            data-name="Millicent Long Rice"
+            data-price="37.60">Add to Cart</button>
+            
+          </div>
+          <div class="product-card">
+            <img src="images/brownrice.jpg" alt="Brown Rice">
+            <p>Brown Perfume Rice 2kg </p>
+            <span>GHC 35.00</span><br><br>
+            <button 
+            class="add-to-cart bg-teal-700 text-white px-4 py-1 rounded hover:bg-teal-600 text-sm"
+            data-name="Brown Perfume Rice 2kg"
+            data-price="35.00">Add to Cart</button>
+            
+          </div>
+
+          <div class="product-card">
+            <img src="images/macaroni.jpg" alt="Macaroni">
+            <p>Italian Macaroni Pasta </p>
+            <span>GHC 16.00</span><br><br>
+            <button>Add to Cart</button>
+            
+          </div>
+
+          <div class="product-card">
+            <img src="images/Briggen cornflakes.jpg" alt="cornflakes">
+            <p>Briggen Corn Flakes 500g</p>
+            <span>GHC 24.00</span><br><br>
+            <button 
+            class="add-to-cart bg-teal-700 text-white px-4 py-1 rounded hover:bg-teal-600 text-sm"
+            data-name="Briggen Corn Flakes 500g"
+            data-price="24.00">Add to Cart</button>
+            
+            
+          </div>
+
+          <div class="product-card">
+            <img src="images/frosted flakes.jpg" alt="cornflakes">
+            <p>Nicks Frosted Flakes 500g</p>
+            <span>GHC 24.00</span><br><br>
+            <button 
+            class="add-to-cart bg-teal-700 text-white px-4 py-1 rounded hover:bg-teal-600 text-sm"
+            data-name="Nicks Frosted Flakes 500g"
+            data-price="24.00">Add to Cart</button>
+            
+            
+          </div>
+        </div>
+      </section>
+
+
+      <section class="products">
+        <div class="section-header">
+          <h2>Bread & Bakery</h2>
+          <a href="category-bakery.html">SEE ALL</a>
+        </div>
+        <div class="product-grid">
+          <div class="product-card">
+            <a href="product4.html"> <img src="images/white bread.webp" alt="White Bread" target="_blank" ></a>
+            <p>White Sliced Bread</p>
+            <span>GHC 21.00</span><br><br>
+            <button 
+            class="add-to-cart bg-teal-700 text-white px-4 py-1 rounded hover:bg-teal-600 text-sm"
+            data-name="White Sliced Bread"
+            data-price="21.00">Add to Cart</button>
+            
+          </div>
+          <div class="product-card">
+            <a href="product5.html"> <img src="images/brown bread.webp" alt="Brown bread" target="_blank" ></a>
+            <p> Brown Wheat Bread</p>
+            <span>GHC 12.00</span><br><br>
+            <button 
+            class="add-to-cart bg-teal-700 text-white px-4 py-1 rounded hover:bg-teal-600 text-sm"
+            data-name="Brown Wheat Bread"
+            data-price="12.00">Add to Cart</button>
+            
+            
+          </div>
+          <div class="product-card">
+            <img src="images/Butter Croissant.webp" alt="Butter Croissant">
+            <p>Butter Croissant 2packs</p>
+            <span>GHC 15.00</span><br><br>
+            <button 
+            class="add-to-cart bg-teal-700 text-white px-4 py-1 rounded hover:bg-teal-600 text-sm"
+            data-name="Butter Croissant 2packs"
+            data-price="15.00">Add to Cart</button>
+            
+          </div>
+          <div class="product-card">
+            <img src="images/chocolatecake.webp" alt="Chocolate Cake">
+            <p>Chocolate Cake 500g</p>
+            <span>GHC 40.00</span><br><br>
+            <button 
+            class="add-to-cart bg-teal-700 text-white px-4 py-1 rounded hover:bg-teal-600 text-sm"
+            data-name="Chocolate Cake 500g"
+            data-price="40.00">Add to Cart</button>
+            
+            
+          </div>
+          <div class="product-card">
+            <img src="images/meatpie.webp" alt="Meat Pie">
+            <p>Meat Pie pack of 4 </p>
+            <span>GHC 20.00</span><br><br>
+            <button 
+            class="add-to-cart bg-teal-700 text-white px-4 py-1 rounded hover:bg-teal-600 text-sm"
+            data-name="Meat Pie pack of 4"
+            data-price="20.00">Add to Cart</button>
+            
+          </div>
+          <div class="product-card">
+            <img src="images/donuts.webp" alt="Donuts">
+            <p>Assorted Donuts 6 pcs </p>
+            <span>GHC 18.00</span><br><br>
+            <button 
+            class="add-to-cart bg-teal-700 text-white px-4 py-1 rounded hover:bg-teal-600 text-sm"
+            data-name="Assorted Donuts 6 pcs"
+            data-price="18.00">Add to Cart</button>
+            
+          </div>
+          <div class="product-card">
+            <img src="images/coconut cookies.webp" alt="Coconut Cookie">
+            <p>Coconut Cookie 250g </p>
+            <span>GHC 12.00</span><br><br>
+            <button 
+            class="add-to-cart bg-teal-700 text-white px-4 py-1 rounded hover:bg-teal-600 text-sm"
+            data-name="coconut cookie 250g"
+            data-price="12.00">Add to Cart</button>
+            
+          </div>
+
+          <div class="product-card">
+            <img src="images/cheese rolls.webp" alt="Cheese Rolls">
+            <p>Cheese Rolls pack of 3 </p>
+            <span>GHC 14.00</span><br><br>
+            <button 
+            class="add-to-cart bg-teal-700 text-white px-4 py-1 rounded hover:bg-teal-600 text-sm"
+            data-name="Cheese Rolls pack of 3"
+            data-price="14.00">Add to Cart</button>
+            
+          </div>
+
+          <div class="product-card">
+            <img src="images/Mini Baguette.webp" alt="Mini Baguette">
+            <p>Mini Baguette 2 pcs </p>
+            <span>GHC 12.00</span><br><br>
+            <button 
+            class="add-to-cart bg-teal-700 text-white px-4 py-1 rounded hover:bg-teal-600 text-sm"
+            data-name="Mini Baguette 2 pcs"
+            data-price="12.00">Add to Cart</button>
+            
+          </div>
+
+          <div class="product-card">
+            <img src="images/coconut cookies.webp" alt="Coconut Cookie">
+            <p>Coconut Cookie 250g </p>
+            <span>GHC 12.00</span><br><br>
+            <button 
+            class="add-to-cart bg-teal-700 text-white px-4 py-1 rounded hover:bg-teal-600 text-sm"
+            data-name="coconut cookie 250g"
+            data-price="12.00">Add to Cart</button>
+            
+          </div>
+
+          <div class="product-card">
+            <img src="images/Vannila muffins.webp" alt="Vanilla Muffin">
+            <p>Vanilla Flavoured Muffin </p>
+            <span>GHC 12.00</span><br><br>
+            <button 
+            class="add-to-cart bg-teal-700 text-white px-4 py-1 rounded hover:bg-teal-600 text-sm"
+            data-name="Vanilla Flavoured Muffin"
+            data-price="12.00">Add to Cart</button>
+            
+          </div>
+
+          <div class="product-card">
+            <img src="images/meatpie.webp" alt="Meat Pie">
+            <p>Meat Pie Pack of 8 </p>
+            <span>GHC 40.00</span><br><br>
+            <button 
+            class="add-to-cart bg-teal-700 text-white px-4 py-1 rounded hover:bg-teal-600 text-sm"
+            data-name="Meat Pie Pack of 8"
+            data-price="40.00">Add to Cart</button>
+            
+          </div>
+        </div>
+      </section>
+
+      <section class="products">
+        <div class="section-header">
+          <h2>Beverages</h2>
+          <a href="category-beverages.html">SEE ALL</a>
+        </div>
+        <div class="product-grid">
+          <div class="product-card">
+            <img src="images/cocacola.jpg" alt="Coca Cola">
+            <p>Coca Cola <br> 300ml</p>
+            <span>GHC 5.00</span><br><br>
+            <button 
+            class="add-to-cart bg-teal-700 text-white px-4 py-1 rounded hover:bg-teal-600 text-sm"
+            data-name="Coca Cola 300ml"
+            data-price="5.00">Add to Cart</button>
+            
+          </div>
+          <div class="product-card">
+            <img src="images/1 (1).jpg" alt="Fanta">
+            <p>Fanta <br> 300ml x24</p>
+            <span>GHC 105.00</span><br><br>
+            <button 
+            class="add-to-cart bg-teal-700 text-white px-4 py-1 rounded hover:bg-teal-600 text-sm"
+            data-name="Fanta 300ml"
+            data-price="105.00">Add to Cart</button>
+            
+            
+          </div>
+          <div class="product-card">
+            <img src="images/1.jpg" alt="Sprite">
+            <p>Sprite <br> 300ml x24</p>
+            <span>GHC 105.00</span><br><br>
+            <button 
+            class="add-to-cart bg-teal-700 text-white px-4 py-1 rounded hover:bg-teal-600 text-sm"
+            data-name="Sprite 300ml"
+            data-price="105.00">Add to Cart</button>
+            
+          </div>
+          <div class="product-card">
+            <img src="images/maltaguni.jpg" alt="Guinness Malt">
+            <p>Guinness Malt <br> Can 330ml x24</p>
+            <span>GHC 160.00</span><br><br>
+            <button 
+            class="add-to-cart bg-teal-700 text-white px-4 py-1 rounded hover:bg-teal-600 text-sm"
+            data-name="Guinness Malt Can 330ml"
+            data-price="160.00">Add to Cart</button>
+            
+            
+          </div>
+          <div class="product-card">
+            <img src="images/maltina.jpg" alt="Oranges">
+            <p>Maltina Can <br> 330ml x24 </p>
+            <span>GHC 180.00</span><br><br>
+            <button 
+            class="add-to-cart bg-teal-700 text-white px-4 py-1 rounded hover:bg-teal-600 text-sm"
+            data-name="Maltina Can 330ml x24"
+            data-price="180.00">Add to Cart</button>
+            
+          </div>
+          <div class="product-card">
+            <img src="images/waterna.png" alt="Natural Water">
+            <p>Natural Mineral  <br> Water 750ml </p>
+            <span>GHC 12.60</span><br><br>
+            <button 
+            class="add-to-cart bg-teal-700 text-white px-4 py-1 rounded hover:bg-teal-600 text-sm"
+            data-name="Natural Mineral Water 750ml"
+            data-price="12.00">Add to Cart</button>
+            
+          </div>
+          <div class="product-card">
+            <img src="images/appleju.png" alt="Apple Juice">
+            <p>Campa Apple <br> Juice 750ml </p>
+            <span>GHC 50.00</span><br><br>
+            <button 
+            class="add-to-cart bg-teal-700 text-white px-4 py-1 rounded hover:bg-teal-600 text-sm"
+            data-name="Campa Apple Juice 750ml"
+            data-price="50.00">Add to Cart</button>
+            
+          </div>
+
+          <div class="product-card">
+            <img src="images/ceresjuice.png" alt="Ceres Juice">
+            <p>Ceres Tropical <br> Fruit Juice 200ml </p>
+            <span>GHC 10.00</span><br><br>
+            <button 
+            class="add-to-cart bg-teal-700 text-white px-4 py-1 rounded hover:bg-teal-600 text-sm"
+            data-name="Ceres Tropical Fruit Juice 200ml"
+            data-price="10.00">Add to Cart</button>
+            
+          </div>
+
+          <div class="product-card">
+            <img src="images/energydrik.jpg" alt="Energy Drink">
+            <p>Storm Energy <br> Drink 500ml </p>
+            <span>GHC 10.00</span><br><br>
+            <button 
+            class="add-to-cart bg-teal-700 text-white px-4 py-1 rounded hover:bg-teal-600 text-sm"
+            data-name="Storm Energy Drink 500ml"
+            data-price="10.00">Add to Cart</button>
+            
+          </div>
+
+          <div class="product-card">
+            <img src="images/lipton.png" alt="Iced Tea">
+            <p>Lipton Iced<br> Tea 250ml </p>
+            <span>GHC 17.00</span><br><br>
+            <button 
+            class="add-to-cart bg-teal-700 text-white px-4 py-1 rounded hover:bg-teal-600 text-sm"
+            data-name="Lipton Iced Tea 250ml"
+            data-price="17.00">Add to Cart</button>
+            
+          </div>
+
+          <div class="product-card">
+            <img src="images/coffeestar.png" alt="Milk Coffee">
+            <p>Starbucks Milk <br> Coffee 250ml </p>
+            <span>GHC 50.00</span><br><br>
+            <button 
+            class="add-to-cart bg-teal-700 text-white px-4 py-1 rounded hover:bg-teal-600 text-sm"
+            data-name="Starbucks Milk Coffee 250ml"
+            data-price="50.00">Add to Cart</button>
+            
+          </div>
+
+          <div class="product-card">
+            <img src="images/twiscoen.png" alt="Twisco Food Drink">
+            <p>Twisco Energy <br> Food Drink 400g </p>
+            <span>GHC 37.00</span><br><br>
+            <button 
+            class="add-to-cart bg-teal-700 text-white px-4 py-1 rounded hover:bg-teal-600 text-sm"
+            data-name="Twisco Energy Food Drink 400g"
+            data-price="37.00">Add to Cart</button>
+            
+          </div>
+        </div>
+      </section>
+
+      <section class="products">
+        <div class="section-header">
+          <h2>Health Care Products</h2>
+          <a href="category-healthcare.html">SEE ALL</a>
+        </div>
+        <div class="product-grid">
+          <div class="product-card">
+            <img src="images/1 (4).jpg" alt="Sheet Mask">
+            <p>Sheet Mask pack of 50</p>
+            <span>GHC 35.10</span><br><br>
+            <button 
+            class="add-to-cart bg-teal-700 text-white px-4 py-1 rounded hover:bg-teal-600 text-sm"
+            data-name="Sheet Make Pack of 50"
+            data-price="35.00">Add to Cart</button>
+            
+          </div>
+          <div class="product-card">
+            <img src="images/1 (5).jpg" alt="Hand Sanitizer">
+            <p>Hand Sanitizer 500ml</p>
+            <span>GHC 35.00</span><br><br>
+            <button 
+            class="add-to-cart bg-teal-700 text-white px-4 py-1 rounded hover:bg-teal-600 text-sm"
+            data-name="Hand Sanitizer 500ml"
+            data-price="35.00">Add to Cart</button>
+            
+            
+          </div>
+          <div class="product-card">
+            <img src="images/1 (7).jpg" alt="Pain Relief">
+            <p>Pain Relief Tablets 24pc </p>
+            <span>GHC 12.00</span><br><br>
+            <button 
+            class="add-to-cart bg-teal-700 text-white px-4 py-1 rounded hover:bg-teal-600 text-sm"
+            data-name="Pain Relief Tablets 24pc"
+            data-price="12.00">Add to Cart</button>
+            
+          </div>
+          <div class="product-card">
+            <img src="images/1 (11).jpg" alt="Digital Thermometer">
+            <p>Digital Thermometer  </p>
+            <span>GHC 40.00</span><br><br>
+            <button 
+            class="add-to-cart bg-teal-700 text-white px-4 py-1 rounded hover:bg-teal-600 text-sm"
+            data-name="Digital Thermometer"
+            data-price="40.00">Add to Cart</button>
+            
+            
+          </div>
+          <div class="product-card">
+            <img src="images/1 (8).jpg" alt="Vitamin C Tablets">
+            <p>Vitamin C Tablets 1000mg </p>
+            <span>GHC 25.00</span><br><br>
+            <button 
+            class="add-to-cart bg-teal-700 text-white px-4 py-1 rounded hover:bg-teal-600 text-sm"
+            data-name="Vitamin C Tablets 1000mg"
+            data-price="25.00">Add to Cart</button>
+            
+          </div>
+          <div class="product-card">
+            <img src="images/1 (9).jpg" alt="Antiseptic Liquid">
+            <p>Antiseptic Liquid 750ml </p>
+            <span>GHC 18.00</span><br><br>
+            <button 
+            class="add-to-cart bg-teal-700 text-white px-4 py-1 rounded hover:bg-teal-600 text-sm"
+            data-name="Liquid Antiseptic 750ml"
+            data-price="18.00">Add to Cart</button>
+            
+          </div>
+          <div class="product-card">
+            <img src="images/1 (10).jpg" alt="First Aid kit">
+            <p> Portable First Aid Kit  </p>
+            <span>GHC 60.00</span><br><br>
+            <button 
+            class="add-to-cart bg-teal-700 text-white px-4 py-1 rounded hover:bg-teal-600 text-sm"
+            data-name="Portable First Aid Kit"
+            data-price="60.00">Add to Cart</button>
+            
+          </div>
+
+          <div class="product-card">
+            <img src="images/3-pack-Equate-Non-Medicated-Vapor-Inhaler-Stick-Menthol-Scent-1-Pack_94d493fa-802c-4ce8-a4e3-5e234d9d7dbe.4dba5570457c53f7c330f53adf1fab60.webp"
+             alt="Instant Relief Inhaler">
+            <p> Instant Relief Inhaler 3pc  </p>
+            <span>GHC 10.00</span><br><br>
+            <button 
+            class="add-to-cart bg-teal-700 text-white px-4 py-1 rounded hover:bg-teal-600 text-sm"
+            data-name="Instant Relief Inhaler 3pc"
+            data-price="10.00">Add to Cart</button>
+            
+          </div>
+
+          <div class="product-card">
+            <img src="images/Metene-Upper-Arm-Blood-Pressure-Monitor-with-Speaker-2-Users-240-Recordings-Large-Cuff-Large-Display-Screen_1371deec-a59e-4052-a6e6-92afc5aeaeba.b524a46e8fb40fa728f4cde83786dccb.webp" 
+            alt="Blood Pressure Monitor">
+            <p> Blood Pressure Monitor  </p>
+            <span>GHC 120.00</span><br><br>
+            <button 
+            class="add-to-cart bg-teal-700 text-white px-4 py-1 rounded hover:bg-teal-600 text-sm"
+            data-name="Blood Pressure Monitor"
+            data-price="120.00">Add to Cart</button>
+            
+          </div>
+
+          <div class="product-card">
+            <img src="images/Refresh-Relieva-For-Contacts-Lubricant-Eye-Drops-For-Use-with-Contact-Lenses-8-ml_75788437-f068-496b-89a1-498e167b4458.60af5905490d931903405d61e8ce0492.webp"
+             alt="Eye Drop">
+            <p> Eye Drop 10ml Bottle  </p>
+            <span>GHC 14.00</span><br><br>
+            <button 
+            class="add-to-cart bg-teal-700 text-white px-4 py-1 rounded hover:bg-teal-600 text-sm"
+            data-name="Eye Drop 10ml Bottle"
+            data-price="14.00">Add to Cart</button>
+            
+          </div>
+
+          <div class="product-card">
+            <img src="images/1 (10).jpg" alt="First Aid kit">
+            <p> Portable First Aid Kit  </p>
+            <span>GHC 60.00</span><br><br>
+            <button 
+            class="add-to-cart bg-teal-700 text-white px-4 py-1 rounded hover:bg-teal-600 text-sm"
+            data-name=""
+            data-price="32.00">Add to Cart</button>
+            
+          </div>
+
+          <div class="product-card">
+            <img src="images/1 (10).jpg" alt="First Aid kit">
+            <p> Portable First Aid Kit  </p>
+            <span>GHC 60.00</span><br><br>
+            <button 
+            class="add-to-cart bg-teal-700 text-white px-4 py-1 rounded hover:bg-teal-600 text-sm"
+            data-name=""
+            data-price="32.00">Add to Cart</button>
+            
+          </div>
+        </div>
+      </section>
+
+      <section class="products">
+        <div class="section-header">
+          <h2>Fish & Seafood</h2>
+          <a href="category-fish&seafood.html">SEE ALL</a>
+        </div>
+        <div class="product-grid">
+          <div class="product-card">
+            <img src="images/tilapia fish.webp" alt="Tilapia">
+            <p>Tilapia<br> Whole 1kg</p>
+            <span>GHC 30.00</span><br><br>
+            <button 
+            class="add-to-cart bg-teal-700 text-white px-4 py-1 rounded hover:bg-teal-600 text-sm"
+            data-name="Tilapia Whole 1kg"
+            data-price="30.00">Add to Cart</button>
+            
+          </div>
+          <div class="product-card">
+            <img src="images/salmon fillets.webp" alt="Salmon">
+            <p>Salmon Fillet Boneless 1kg</p>
+            <span>GHC 50.00</span><br><br>
+            <button 
+            class="add-to-cart bg-teal-700 text-white px-4 py-1 rounded hover:bg-teal-600 text-sm"
+            data-name="Salmon Fillet Boneless 1kg"
+            data-price="50.00">Add to Cart</button>
+            
+            
+          </div>
+          <div class="product-card">
+            <img src="images/shrimp.webp" alt="Shrimp">
+            <p>Shrimp <br> Cleaned 500g </p>
+            <span>GHC 38.00</span><br><br>
+            <button 
+            class="add-to-cart bg-teal-700 text-white px-4 py-1 rounded hover:bg-teal-600 text-sm"
+            data-name="Shrimp Cleaned 500g"
+            data-price="38.00">Add to Cart</button>
+            
+          </div>
+          <div class="product-card">
+            <img src="images/crabs.webp" alt="Crab">
+            <p>Crab <br> Live 1kg</p>
+            <span>GHC 45.00</span><br><br>
+            <button 
+            class="add-to-cart bg-teal-700 text-white px-4 py-1 rounded hover:bg-teal-600 text-sm"
+            data-name="Crab Live 1kg"
+            data-price="45.00">Add to Cart</button>
+            
+            
+          </div>
+          <div class="product-card">
+            <img src="images/octopus.webp" alt="Octopus">
+            <p>Octopus <br> Whole 800g</p>
+            <span>GHC 40.00</span><br><br>
+            <button 
+            class="add-to-cart bg-teal-700 text-white px-4 py-1 rounded hover:bg-teal-600 text-sm"
+            data-name="Octopus Whole 800g"
+            data-price="40.00">Add to Cart</button>
+            
+          </div>
+          <div class="product-card">
+            <img src="images/catfish fillet.webp" alt="Catfish">
+            <p>Catfish <br> Fillet 2kg</p>
+            <span>GHC 28.00</span><br><br>
+            <button 
+            class="add-to-cart bg-teal-700 text-white px-4 py-1 rounded hover:bg-teal-600 text-sm"
+            data-name="Catfish Fillet 2kg"
+            data-price="28.00">Add to Cart</button>
+            
+          </div>
+          <div class="product-card">
+            <img src="images/salmon fillets.webp" alt="Lobster">
+            <p>Lobster<br>Fresh 600g </p>
+            <span>GHC 70.00</span><br><br>
+            <button 
+            class="add-to-cart bg-teal-700 text-white px-4 py-1 rounded hover:bg-teal-600 text-sm"
+            data-name="Lobster Fresh 600g"
+            data-price="70.00">Add to Cart</button>
+            
+          </div>
+
+          <div class="product-card">
+            <img src="images/salmon fillets.webp" alt="Mackerel">
+            <p>Mackerel <br>Frozen 1kg </p>
+            <span>GHC 26.00</span><br><br>
+            <button 
+            class="add-to-cart bg-teal-700 text-white px-4 py-1 rounded hover:bg-teal-600 text-sm"
+            data-name="Mackerel Frozen 1kg"
+            data-price="26.00">Add to Cart</button>
+            
+          </div>
+
+          <div class="product-card">
+            <img src="images/x612_1a.jpg" alt="Sardine">
+            <p>Sardine <br>Tinned 125g </p>
+            <span>GHC 15.00</span><br><br>
+            <button 
+            class="add-to-cart bg-teal-700 text-white px-4 py-1 rounded hover:bg-teal-600 text-sm"
+            data-name="Sardine Tinned 125g"
+            data-price="15.00">Add to Cart</button>
+            
+          </div>
+
+          <div class="product-card">
+            <img src="images/tilapia fish.webp" alt="Tilapia">
+            <p>Tilapia<br> Live 9kg</p>
+            <span>GHC 130.00</span><br><br>
+            <button 
+            class="add-to-cart bg-teal-700 text-white px-4 py-1 rounded hover:bg-teal-600 text-sm"
+            data-name="Tilapia Live 9kg"
+            data-price="130.00">Add to Cart</button>
+            
+          </div>
+
+          <div class="product-card">
+            <img src="images/shrimp.webp" alt="Shrimp">
+            <p>Shrimp <br> Cleaned 2kg </p>
+            <span>GHC 76.00</span><br><br>
+            <button 
+            class="add-to-cart bg-teal-700 text-white px-4 py-1 rounded hover:bg-teal-600 text-sm"
+            data-name="Shrimp Cleaned 2kg"
+            data-price="76.00">Add to Cart</button>
+            
+          </div>
+
+          <div class="product-card">
+            <img src="images/anchiovies.webp" alt="Anchovies">
+            <p>Anchovies <br>Dried 300g </p>
+            <span>GHC 22.00</span><br><br>
+            <button 
+            class="add-to-cart bg-teal-700 text-white px-4 py-1 rounded hover:bg-teal-600 text-sm"
+            data-name="Anchovies Dried 300g"
+            data-price="22.00">Add to Cart</button>
+            
+          </div>
+        </div>
+      </section>
+
+      <section class="products">
+        <div class="section-header">
+          <h2>Fruits</h2>
+          <a href="category_fruits.html">SEE ALL</a>
+        </div>
+        <div class="product-grid">
+          <div class="product-card">
+            <img src="images/redapple2.jpeg" alt="Red Apple">
+            <p>Red Apples <br> Bag 1kg</p>
+            <span>GHC 30.00</span><br><br>
+            <button 
+            class="add-to-cart bg-teal-700 text-white px-4 py-1 rounded hover:bg-teal-600 text-sm"
+            data-name="Red Apples Bag 1kg"
+            data-price="30.00">Add to Cart</button>
+            
+          </div>
+          <div class="product-card">
+            <img src="images/Avocado.jpg" alt="Avocado">
+            <p>Avocado <br> Bag 1kg</p>
+            <span>GHC 24.00</span><br><br>
+            <button 
+            class="add-to-cart bg-teal-700 text-white px-4 py-1 rounded hover:bg-teal-600 text-sm"
+            data-name="Avocado Bag 1kg"
+            data-price="24.00">Add to Cart</button>
+            
+            
+          </div>
+          <div class="product-card">
+            <img src="images/grapefruit.jpg" alt="Classic Rice">
+            <p>Grapes <br> Pack 1kg </p>
+            <span>GHC 89.00</span><br><br>
+            <button 
+            class="add-to-cart bg-teal-700 text-white px-4 py-1 rounded hover:bg-teal-600 text-sm"
+            data-name="Grapes Pack 1kg"
+            data-price="89.00">Add to Cart</button>
+            
+          </div>
+          <div class="product-card">
+            <img src="images/bananas.jpg" alt="Banana">
+            <p>Banana <br> pack 1kg</p>
+            <span>GHC 16.00</span><br><br>
+            <button 
+            class="add-to-cart bg-teal-700 text-white px-4 py-1 rounded hover:bg-teal-600 text-sm"
+            data-name="Banana pack 1kg"
+            data-price="16.00">Add to Cart</button>
+            
+            
+          </div>
+          <div class="product-card">
+            <img src="images/oranges.jpg" alt="Oranges">
+            <p>Oranges <br> Bag 1kg </p>
+            <span>GHC 18.00</span><br><br>
+            <button 
+            class="add-to-cart bg-teal-700 text-white px-4 py-1 rounded hover:bg-teal-600 text-sm"
+            data-name="Oranges Bag 1kg"
+            data-price="18.00">Add to Cart</button>
+            
+          </div>
+          <div class="product-card">
+            <img src="images/strawberries.jpg" alt="Strawberry">
+            <p>Strawberry <br> Pack 1kg </p>
+            <span>GHC 37.00</span><br><br>
+            <button 
+            class="add-to-cart bg-teal-700 text-white px-4 py-1 rounded hover:bg-teal-600 text-sm"
+            data-name="Strawberry Pack 1kg"
+            data-price="37.00">Add to Cart</button>
+            
+          </div>
+          <div class="product-card">
+            <img src="images/pear.jpeg" alt="Pear">
+            <p>Pear <br> Pack 1kg </p>
+            <span>GHC 12.00</span><br><br>
+            <button 
+            class="add-to-cart bg-teal-700 text-white px-4 py-1 rounded hover:bg-teal-600 text-sm"
+            data-name="Pear Pack 1kg"
+            data-price="12.00">Add to Cart</button>
+            
+          </div>
+
+          <div class="product-card">
+            <img src="images/pomornate.jpeg" alt="Pomegranate">
+            <p>Pomegranate <br> Pack 1kg </p>
+            <span>GHC 37.00</span><br><br>
+            <button 
+            class="add-to-cart bg-teal-700 text-white px-4 py-1 rounded hover:bg-teal-600 text-sm"
+            data-name="PomegranatePack 1kg"
+            data-price="37.00">Add to Cart</button>
+            
+          </div>
+
+          <div class="product-card">
+            <img src="images/guava1.jpg" alt="Guava">
+            <p>Guava <br> Pack 1kg </p>
+            <span>GHC 37.00</span><br><br>
+            <button 
+            class="add-to-cart bg-teal-700 text-white px-4 py-1 rounded hover:bg-teal-600 text-sm"
+            data-name="Guava Pack 1kg"
+            data-price="37.00">Add to Cart</button>
+            
+          </div>
+
+          <div class="product-card">
+            <img src="images/yellowapple2.jpeg" alt="Yellow Apple">
+            <p>Yellow Apple <br> Pack 1kg </p>
+            <span>GHC 52.00</span><br><br>
+            <button 
+            class="add-to-cart bg-teal-700 text-white px-4 py-1 rounded hover:bg-teal-600 text-sm"
+            data-name="Yellow Pack 1kg"
+            data-price="52.00">Add to Cart</button>
+            
+          </div>
+
+          <div class="product-card">
+            <img src="images/bluebery.jpeg" alt="Blueberry">
+            <p>Blue Berry <br> Pack 1kg </p>
+            <span>GHC 80.00</span><br><br>
+            <button 
+            class="add-to-cart bg-teal-700 text-white px-4 py-1 rounded hover:bg-teal-600 text-sm"
+            data-name="Blueberry Pack 1kg"
+            data-price="80.00">Add to Cart</button>
+            
+          </div>
+
+          <div class="product-card">
+            <img src="images/greenapple1.jpg" alt="Green Apples">
+            <p>Green Apples <br> Pack 1kg </p>
+            <span>GHC 37.00</span><br><br>
+            <button 
+            class="add-to-cart bg-teal-700 text-white px-4 py-1 rounded hover:bg-teal-600 text-sm"
+            data-name="Green Apples Pack 1kg"
+            data-price="37.00">Add to Cart</button>
+            
+          </div>
+        </div>
+      </section>
+
+      <section class="products">
+        <div class="section-header">
+          <h2>Dairy</h2>
+          <a href="category-dairy.html">SEE ALL</a>
+        </div>
+        <div class="product-grid">
+          <div class="product-card">
+            <img src="images/freshmilk.png" alt="Fresh Milk">
+            <p>Fresh Milk <br> 1l Bottle</p>
+            <span>GHC 35.00</span><br><br>
+            <button 
+            class="add-to-cart bg-teal-700 text-white px-4 py-1 rounded hover:bg-teal-600 text-sm"
+            data-name="Fresh Milk 1l Bottle"
+            data-price="35.00">Add to Cart</button>
+            
+          </div>
+          <div class="product-card">
+            <img src="images/cheddar.png" alt="Cheddar Cheese">
+            <p>Cheddar <br> Cheese 200g</p>
+            <span>GHC 25.00</span><br><br>
+            <button 
+            class="add-to-cart bg-teal-700 text-white px-4 py-1 rounded hover:bg-teal-600 text-sm"
+            data-name="Cheddar Cheese 200g"
+            data-price="25.00">Add to Cart</button>
+            
+            
+          </div>
+          <div class="product-card">
+            <img src="images/wippcream.jpeg" alt="Whipping Cream">
+            <p>Whipping <br> Cream 200ml </p>
+            <span>GHC 20.00</span><br><br>
+            <button 
+            class="add-to-cart bg-teal-700 text-white px-4 py-1 rounded hover:bg-teal-600 text-sm"
+            data-name="Whipping Cream 200ml"
+            data-price="20.00">Add to Cart</button>
+            
+          </div>
+          <div class="product-card">
+            <img src="images/bananas.jpg" alt="Unsalted Butter">
+            <p>Unsalted <br> Butter 250g</p>
+            <span>GHC 18.00</span><br><br>
+            <button 
+            class="add-to-cart bg-teal-700 text-white px-4 py-1 rounded hover:bg-teal-600 text-sm"
+            data-name="Unsalted Butter 250g"
+            data-price="18.00">Add to Cart</button>
+            
+            
+          </div>
+          <div class="product-card">
+            <img src="images/greekyou.png" alt="Greek Yogurt">
+            <p>Greek  <br> Yogurt 500ml </p>
+            <span>GHC 14.00</span><br><br>
+            <button 
+            class="add-to-cart bg-teal-700 text-white px-4 py-1 rounded hover:bg-teal-600 text-sm"
+            data-name="Greek Yogurt 500ml"
+            data-price="14.00">Add to Cart</button>
+            
+          </div>
+          <div class="product-card">
+            <img src="images/cottcheese.jpeg" alt="Cottage Cheese">
+            <p>Cottage  <br> Cheese 300g </p>
+            <span>GHC 22.60</span><br><br>
+            <button 
+            class="add-to-cart bg-teal-700 text-white px-4 py-1 rounded hover:bg-teal-600 text-sm"
+            data-name="Strawberry Pack 1kg"
+            data-price="22.00">Add to Cart</button>
+            
+          </div>
+          <div class="product-card">
+            <img src="images/powdermilk.png" alt="Powdered Milk">
+            <p>Powdered <br> Milk 400g </p>
+            <span>GHC 30.00</span><br><br>
+            <button 
+            class="add-to-cart bg-teal-700 text-white px-4 py-1 rounded hover:bg-teal-600 text-sm"
+            data-name="Powdered Milk 400g"
+            data-price="30.00">Add to Cart</button>
+            
+          </div>
+
+          <div class="product-card">
+            <img src="images/evamilk.jpeg" alt="Evaporated Milk">
+            <p>Evaporated  <br> Milk 170ml </p>
+            <span>GHC 35.00</span><br><br>
+            <button 
+            class="add-to-cart bg-teal-700 text-white px-4 py-1 rounded hover:bg-teal-600 text-sm"
+            data-name="Evaporated Milk 170ml"
+            data-price="35.00">Add to Cart</button>
+            
+          </div>
+
+          <div class="product-card">
+            <img src="images/chocobutter.png" alt="Chocolate Butter">
+            <p>Chocolate  <br> Butter 34g </p>
+            <span>GHC 16.00</span><br><br>
+            <button 
+            class="add-to-cart bg-teal-700 text-white px-4 py-1 rounded hover:bg-teal-600 text-sm"
+            data-name="Chocolate Butter 34g"
+            data-price="16.00">Add to Cart</button>
+            
+          </div>
+
+          <div class="product-card">
+            <img src="images/fetacheese.png" alt="Feta Cheese">
+            <p>Emborg Feta <br> Cheese 200g </p>
+            <span>GHC 32.00</span><br><br>
+            <button 
+            class="add-to-cart bg-teal-700 text-white px-4 py-1 rounded hover:bg-teal-600 text-sm"
+            data-name="Emborg Feta Cheese 200g"
+            data-price="32.00">Add to Cart</button>
+            
+          </div>
+
+          <div class="product-card">
+            <img src="images/banaflav.png" alt="Banana Milk">
+            <p>Banana <br> Milk 225ml </p>
+            <span>GHC 8.00</span><br><br>
+            <button 
+            class="add-to-cart bg-teal-700 text-white px-4 py-1 rounded hover:bg-teal-600 text-sm"
+            data-name="Banana Milk 225ml"
+            data-price="8.00">Add to Cart</button>
+            
+          </div>
+
+          <div class="product-card">
+            <img src="images/milkyogurt.png" alt="Plain Yogurt">
+            <p>Nani Plain <br> Yogurt 1000g </p>
+            <span>GHC 33.00</span><br><br>
+            <button 
+            class="add-to-cart bg-teal-700 text-white px-4 py-1 rounded hover:bg-teal-600 text-sm"
+            data-name="Nani Plain Yogurt 1000g"
+            data-price="33.00">Add to Cart</button>
+            
+          </div>
+        </div>
+      </section>
+
+      <section class="products">
+        <div class="section-header">
+          <h2>Vegetables</h2>
+          <a href="category-vegetables.html">SEE ALL</a>
+        </div>
+        <div class="product-grid">
+          <div class="product-card">
+            <img src="images/tomatoes.jpg" alt="Tomatoes">
+            <p>Tomatoes <br> Pack 1kg</p>
+            <span>GHC 30.00</span><br><br>
+            <button 
+            class="add-to-cart bg-teal-700 text-white px-4 py-1 rounded hover:bg-teal-600 text-sm"
+            data-name="Tomatoes Pack 1kg"
+            data-price="30.00">Add to Cart</button>
+            
+          </div>
+          <div class="product-card">
+            <img src="images/carrots.jpeg" alt="Carrot">
+            <p>Carrot <br> Bunch 1kg</p>
+            <span>GHC 40.00</span><br><br>
+            <button 
+            class="add-to-cart bg-teal-700 text-white px-4 py-1 rounded hover:bg-teal-600 text-sm"
+            data-name="Carrot Bunch 1kg"
+            data-price="40.00">Add to Cart</button>
+            
+            
+          </div>
+          <div class="product-card">
+            <img src="images/onions.jpg" alt="Onions">
+            <p>Onion <br> Bag 1kg </p>
+            <span>GHC 68.50</span><br><br>
+            <button 
+            class="add-to-cart bg-teal-700 text-white px-4 py-1 rounded hover:bg-teal-600 text-sm"
+            data-name="Onion Bag 1kg"
+            data-price="68.50">Add to Cart</button>
+            
+          </div>
+          <div class="product-card">
+            <img src="images/cabbage.jpg" alt="Cabbage">
+            <p>Cabbage <br> Whole 1kg</p>
+            <span>GHC 21.00</span><br><br>
+            <button 
+            class="add-to-cart bg-teal-700 text-white px-4 py-1 rounded hover:bg-teal-600 text-sm"
+            data-name="Whole Cabbage 1kg"
+            data-price="21.00">Add to Cart</button>
+            
+            
+          </div>
+          <div class="product-card">
+            <img src="images/lettuce.webp" alt="Lettuce">
+            <p>Lettuce <br> Bunch 1kg </p>
+            <span>GHC 18.00</span><br><br>
+            <button 
+            class="add-to-cart bg-teal-700 text-white px-4 py-1 rounded hover:bg-teal-600 text-sm"
+            data-name="Lettuce Bunch 1kg"
+            data-price="18.00">Add to Cart</button>
+            
+          </div>
+          <div class="product-card">
+            <img src="images/babyon.jpg" alt="Baby Onion">
+            <p>Baby Onion <br> Pack 1kg </p>
+            <span>GHC 12.00</span><br><br>
+            <button 
+            class="add-to-cart bg-teal-700 text-white px-4 py-1 rounded hover:bg-teal-600 text-sm"
+            data-name="Baby Onion Pack 1kg"
+            data-price="12.00">Add to Cart</button>
+            
+          </div>
+          <div class="product-card">
+            <img src="images/potato.jpg" alt="Potatoes">
+            <p>Potatoes <br> Bag 1kg </p>
+            <span>GHC 41.00</span><br><br>
+            <button 
+            class="add-to-cart bg-teal-700 text-white px-4 py-1 rounded hover:bg-teal-600 text-sm"
+            data-name="Potatoes Bag 1kg"
+            data-price="41.00">Add to Cart</button>
+            
+          </div>
+
+          <div class="product-card">
+            <img src="images/garden-egg.jpg" alt="Garden Egg">
+            <p>Garden Egg <br> Bunch 1kg </p>
+            <span>GHC 21.00</span><br><br>
+            <button 
+            class="add-to-cart bg-teal-700 text-white px-4 py-1 rounded hover:bg-teal-600 text-sm"
+            data-name="Garden Egg Bunch 1kg"
+            data-price="21.00">Add to Cart</button>
+            
+          </div>
+
+          <div class="product-card">
+            <img src="images/okra.jpg" alt="Okra">
+            <p>Okra <br> Pack 1kg </p>
+            <span>GHC 30.00</span><br><br>
+            <button 
+            class="add-to-cart bg-teal-700 text-white px-4 py-1 rounded hover:bg-teal-600 text-sm"
+            data-name="Okra Pack 1kg"
+            data-price="30.00">Add to Cart</button>
+            
+          </div>
+
+          <div class="product-card">
+            <img src="images/green-beans.jpg" alt="Green Beans">
+            <p>Green Beans <br> Pack 1kg </p>
+            <span>GHC 52.00</span><br><br>
+            <button 
+            class="add-to-cart bg-teal-700 text-white px-4 py-1 rounded hover:bg-teal-600 text-sm"
+            data-name="Green Beans Pack 1kg"
+            data-price="52.00">Add to Cart</button>
+            
+          </div>
+
+          <div class="product-card">
+            <img src="images/greenbellpe.jpg" alt="Green Bell Pepper">
+            <p>Green Bell <br> Pepper 1kg </p>
+            <span>GHC 40.00</span><br><br>
+            <button 
+            class="add-to-cart bg-teal-700 text-white px-4 py-1 rounded hover:bg-teal-600 text-sm"
+            data-name="Green Bell Pepper 1kg"
+            data-price="40.00">Add to Cart</button>
+            
+          </div>
+
+          <div class="product-card">
+            <img src="images/chilli.jpg" alt="Chilli Pepper">
+            <p>Chilli <br> Pepper 1kg </p>
+            <span>GHC 30.00</span><br><br>
+            <button 
+            class="add-to-cart bg-teal-700 text-white px-4 py-1 rounded hover:bg-teal-600 text-sm"
+            data-name="Chilli Pepper Pack 1kg"
+            data-price="30.00">Add to Cart</button>
+            
+          </div>
+        </div>
+      </section>
+
+      <section class="products">
+        <div class="section-header">
+          <h2>Pet Care</h2>
+          <a href="category-petcare.html">SEE ALL</a>
+        </div>
+        <div class="product-grid">
+          <div class="product-card">
+            <img src="images/dogbeef.png" alt="Dog Food">
+            <p>Dog Food <br> Beef 2kg</p>
+            <span>GHC 45.00</span><br><br>
+            <button 
+            class="add-to-cart bg-teal-700 text-white px-4 py-1 rounded hover:bg-teal-600 text-sm"
+            data-name="Dog Food Beef Flavour 2kg"
+            data-price="45.00">Add to Cart</button>
+            
+          </div>
+          <div class="product-card">
+            <img src="images/pet1 (8).webp" alt="Cat Odor Control">
+            <p>Cat Odor  <br> Control 5kg</p>
+            <span>GHC 30.00</span><br><br>
+            <button 
+            class="add-to-cart bg-teal-700 text-white px-4 py-1 rounded hover:bg-teal-600 text-sm"
+            data-name="Car Litter Odor Control 5kg"
+            data-price="30.00">Add to Cart</button>
+            
+            
+          </div>
+          <div class="product-card">
+            <img src="images/pet1 (7).webp" alt="Bird Feed">
+            <p>Bird Feed <br> Seeds 1kg </p>
+            <span>GHC 20.00</span><br><br>
+            <button 
+            class="add-to-cart bg-teal-700 text-white px-4 py-1 rounded hover:bg-teal-600 text-sm"
+            data-name="Bird Feed Seeds Mix 1kg"
+            data-price="20.00">Add to Cart</button>
+            
+          </div>
+          <div class="product-card">
+            <img src="images/pet1 (6).webp" alt=" Anti-flea Shampoo">
+            <p>Anti-Flea <br> Shampoo 500ml</p>
+            <span>GHC 25.00</span><br><br>
+            <button 
+            class="add-to-cart bg-teal-700 text-white px-4 py-1 rounded hover:bg-teal-600 text-sm"
+            data-name="Anti-Flea Shampoo 500ml"
+            data-price="25.00">Add to Cart</button>
+            
+            
+          </div>
+          <div class="product-card">
+            <img src="images/pet1 (5).webp" alt="Chew Toy">
+            <p>Pet Chew <br> Toy Pack </p>
+            <span>GHC 35.00</span><br><br>
+            <button 
+            class="add-to-cart bg-teal-700 text-white px-4 py-1 rounded hover:bg-teal-600 text-sm"
+            data-name="Pet Chew Toy pack"
+            data-price="35.00">Add to Cart</button>
+            
+          </div>
+          <div class="product-card">
+            <img src="images/pet1 (4).webp" alt="Steel Bowl">
+            <p>Stainless  <br> Steel Bowl </p>
+            <span>GHC 18.00</span><br><br>
+            <button 
+            class="add-to-cart bg-teal-700 text-white px-4 py-1 rounded hover:bg-teal-600 text-sm"
+            data-name="Stainless Steel Pet Bowl"
+            data-price="18.00">Add to Cart</button>
+            
+          </div>
+          <div class="product-card">
+            <img src="images/pet1 (3).webp" alt="Leash and collar">
+            <p>Leash & Collar <br> Adjustable </p>
+            <span>GHC 28.00</span><br><br>
+            <button 
+            class="add-to-cart bg-teal-700 text-white px-4 py-1 rounded hover:bg-teal-600 text-sm"
+            data-name="Leash & Collar Adjustable"
+            data-price="28.00">Add to Cart</button>
+            
+          </div>
+
+          <div class="product-card">
+            <img src="images/pet1 (2).webp" alt="Fish Tank Cleaner">
+            <p>Fish Tank <br> Cleaner 250ml</p>
+            <span>GHC 15.00</span><br><br>
+            <button 
+            class="add-to-cart bg-teal-700 text-white px-4 py-1 rounded hover:bg-teal-600 text-sm"
+            data-name="Fish Tank Cleaner 250ml"
+            data-price="15.00">Add to Cart</button>
+            
+          </div>
+
+          <div class="product-card">
+            <img src="images/pet1 (1).webp" alt="Vitamin Supplement">
+            <p>Vitamins <br> Supplement  </p>
+            <span>GHC 32.00</span><br><br>
+            <button 
+            class="add-to-cart bg-teal-700 text-white px-4 py-1 rounded hover:bg-teal-600 text-sm"
+            data-name="Pet Vitamin Supplement"
+            data-price="32.00">Add to Cart</button>
+            
+          </div>
+
+          <div class="product-card">
+            <img src="images/groomingb.webp" alt="Grooming Brush">
+            <p>Grooming <br> Soft Brush </p>
+            <span>GHC 22.00</span><br><br>
+            <button 
+            class="add-to-cart bg-teal-700 text-white px-4 py-1 rounded hover:bg-teal-600 text-sm"
+            data-name="Grooming Soft Brush"
+            data-price="22.00">Add to Cart</button>
+            
+          </div>
+
+          <div class="product-card">
+            <img src="images/huskychicken.png" alt="Blueberry">
+            <p>Husky Chunky <br> Chicken 775g </p>
+            <span>GHC 60.00</span><br><br>
+            <button 
+            class="add-to-cart bg-teal-700 text-white px-4 py-1 rounded hover:bg-teal-600 text-sm"
+            data-name="Blueberry Pack 1kg"
+            data-price="60.00">Add to Cart</button>
+            
+          </div>
+
+          <div class="product-card">
+            <img src="images/dogbisc.png" alt="Dog Biscuits">
+            <p>Dog Gravy <br> Biscuits 800g </p>
+            <span>GHC 37.00</span><br><br>
+            <button 
+            class="add-to-cart bg-teal-700 text-white px-4 py-1 rounded hover:bg-teal-600 text-sm"
+            data-name="Dog Gravy Biscuits 800g"
+            data-price="37.00">Add to Cart</button>
+            
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <aside class="info-panel">
+      <div class="info-box">
+        <h4>📞 HELP CENTRE</h4>
+        <p>How can we help you?</p>
+
+        <br><br>
+        <h4>📦 TRACK YOUR ORDER</h4>
+        <p>Stay up to date</p>
+      </div>
+      <div class="call-box">
+        <p>Call to order</p>
+        <h2>029 000 0000</h2>
+      </div>
+    </aside>
+  </div>
+
+  <!-- Login Modal -->
+  <div class="modal" id="loginModal">
+    <div class="modal-content">
+      <span class="close" onclick="closeLoginModal()">&times;</span>
+      <h3>Login to Your Account</h3>
+      <input type="text" placeholder="Email" />
+      <input type="password" placeholder="Password" />
+      <button class="login-btn">Login</button>
+    </div>
+  </div>
+
+
+  <footer class="bg-teal-900 text-yellow-100 text-sm text-center p-4 mt-8">
+    <div class="space-y-2">
+      <p>&copy; 2025 Akpoviri Grocery Hub. All rights reserved.</p>
+      <div class="flex justify-center space-x-4 text-white">
+        <a href="https://wa.me/your-number" target="_blank" class="hover:underline">WhatsApp</a>
+        <a href="https://x.com/yourhandle" target="_blank" class="hover:underline">X</a>
+        <a href="https://facebook.com/yourpage" target="_blank" class="hover:underline">Facebook</a>
+        <a href="https://instagram.com/yourhandle" target="_blank" class="hover:underline">Instagram</a>
+      </div>
+    </div>
+  </footer>
+
+
+  <script>
+    window.addEventListener('load', () => {
+      document.getElementById('loader-overlay').style.display = 'none';
+      document.getElementById('page-content').classList.remove('hidden');
+    });
+
+
+    function toggleAccountMenu() {
+      const menu = document.getElementById("accountDropdown");
+      menu.style.display = menu.style.display === "block" ? "none" : "block";
+    }
+  
+    // Close the dropdown if clicked outside
+    window.addEventListener("click", function(event) {
+      const dropdown = document.getElementById("accountDropdown");
+      const toggle = document.querySelector(".account-dropdown-toggle");
+      if (!toggle.contains(event.target)) {
+        dropdown.style.display = "none";
+      }
+    });
+
+    const slides = document.querySelectorAll('.banner-slide');
+const dots = document.querySelectorAll('.dot');
+let currentSlide = 0;
+let slideInterval = setInterval(nextSlide, 3000);
+
+function showSlide(index) {
+    slides.forEach((slide, i) => {
+        if (i === index) {
+            slide.classList.add('active');
+        } 
+        else {
+            slide.classList.remove('active');
+        }
+        dots[i].classList.toggle('active', i === index);
+      });
+    }
+
+    function nextSlide() {
+      currentSlide = (currentSlide + 1) % slides.length;
+      showSlide(currentSlide);
+    }
+
+    function prevSlide() {
+      currentSlide = (currentSlide - 1 + slides.length) % slides.length;
+      showSlide(currentSlide);
+    }
+
+    dots.forEach((dot, i) => {
+      dot.addEventListener('click', () => {
+        currentSlide = i;
+        showSlide(currentSlide);
+        resetInterval();
+      });
+    });
+
+    function resetInterval() {
+      clearInterval(slideInterval);
+      slideInterval = setInterval(nextSlide, 3000);
+    }
+
+    showSlide(currentSlide);
+
+
+    function getCart() {
+      return JSON.parse(localStorage.getItem('cart')) || [];
+    }
+  
+    // Function to save cart to localStorage
+    function saveCart(cart) {
+      localStorage.setItem('cart', JSON.stringify(cart));
+    }
+  
+    // Add click event to all Add to Cart buttons
+    document.querySelectorAll('.add-to-cart').forEach(button => {
+      button.addEventListener('click', () => {
+        const name = button.getAttribute('data-name');
+        const price = parseFloat(button.getAttribute('data-price'));
+  
+        let cart = getCart();
+  
+        // Check if item already exists
+        const existingItem = cart.find(item => item.name === name);
+        if (existingItem) {
+          existingItem.quantity += 1;
+        } else {
+          cart.push({ name, price, quantity: 1 });
+        }
+  
+        saveCart(cart);
+        alert(`${name} added to cart!`);
+      });
+    });
+  </script>
+  
+  
+</body>
+</html>

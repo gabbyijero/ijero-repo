@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Fruits Category</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-gray-100 text-gray-800">
+
+  <!-- Top Strip -->
+  <div class="bg-gradient-to-r from-teal-800 to-teal-500 text-yellow-300 text-sm text-right p-2">
+    <p class="text-xs md:text-sm"><strong class="block md:inline">JUST ORDER, IT WILL BE DELIVERED</strong></p>
+  </div>
+
+  <!-- Header -->
+  <header class="bg-white border-b border-gray-300 p-4 space-y-2">
+    <div class="flex justify-center space-x-4 text-sm font-semibold flex-wrap text-center">
+      <a href="index.html" class="text-gray-700 hover:text-teal-600">HOME</a>
+      <a href="category_fruits.html" target="_blank" class="text-gray-700 hover:text-teal-600">FRUITS</a>
+      <a href="category-vegetables.html" target="_blank" class="text-gray-700 hover:text-teal-600">VEGETABLES</a>
+      <a href="category-beverages.html" target="_blank" class="text-gray-700 hover:text-teal-600">BEVERAGES</a>
+      <a href="category-dairy.html" target="_blank" class="text-gray-700 hover:text-teal-600">DAIRY</a>
+      <a href="category-fish&seafood.html" target="_blank" class="text-gray-700 hover:text-teal-600">SEAFOOD</a>
+      <a href="category-bakery.html" target="_blank" class="text-gray-700 hover:text-teal-600">BAKERY</a>
+      <a href="category-healthcare.html" target="_blank" class="text-gray-700 hover:text-teal-600">HEALTHCARE</a>
+      <a href="category-petcare.html" target="_blank" class="text-gray-700 hover:text-teal-600 ">PETCARE</a>
+      <a href="category-pasta&rice&cereal.html" target="_blank" class="text-gray-700 hover:text-teal-600 ">RICE & PASTA</a>
+    </div>
+    <div class="flex items-center justify-between gap-4 mt-2">
+      <img src="logo-2078018_1280.png" alt="Logo" class="w-20 h-20">
+      <div class="flex flex-1 items-center gap-2">
+        <input type="text" placeholder="Search products" class="flex-1 px-4 py-2 border rounded-md border-gray-300 focus:ring-2 focus:ring-teal-500" />
+        <button class="px-4 py-2 bg-teal-700 hover:bg-teal-600 text-white rounded-md">SEARCH</button>
+      </div>
+      <div class="flex items-center space-x-4 relative">
+        <div class="relative group">
+          <div class="cursor-pointer font-medium flex items-center gap-1">👤 Account ⌄</div>
+          <div class="absolute right-0 top-full mt-2 hidden group-hover:block bg-white shadow-lg border rounded-lg w-44 z-50">
+            <button onclick="openLoginModal()" class="w-full text-left px-4 py-2 text-sm hover:bg-yellow-300">SIGN IN</button>
+            <a href="#" class="block px-4 py-2 text-sm hover:bg-yellow-300">👤 My Account</a>
+            <a href="#" class="block px-4 py-2 text-sm hover:bg-yellow-300">📦 Orders</a>
+            <a href="#" class="block px-4 py-2 text-sm hover:bg-yellow-300">❤️ Saved Items</a>
+          </div>
+        </div>
+        <div class="cursor-pointer">❓ Help</div>
+        <a href="cart.html" target="_blank" class="cursor-pointer hover:underline text-teal-700">🛒 Cart</a>
+      </div>
+    </div>
+  </header>
+
+  <!-- Page Title -->
+  <section class="text-center my-6">
+    <h1 class="text-4xl font-bold text-green-700">Fruits Category</h1>
+    <p class="text-gray-600">Enjoy fresh, organic fruits delivered to your doorstep</p>
+  </section>
+
+  <!-- Product Grid -->
+  <section class="px-4 sm:px-8 md:px-16 py-10">
+    <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-6">
+
+      <!-- Fruit Cards -->
+      <div class="bg-white rounded-lg shadow hover:shadow-lg p-4 text-center">
+        <img src="images/redapple2.jpeg" alt="Apple" class="w-20 h-20 mx-auto mb-4">
+        <h2 class="text-lg font-semibold text-green-700">Red Apple</h2>
+        <p class="text-gray-600">₵10.00</p>
+        <button 
+        class="add-to-cart bg-teal-700 text-white px-4 py-1 rounded hover:bg-teal-600 text-sm"
+        data-name="Red Apple Pack of 1k"
+        data-price="10.00">Add to Cart</button>
+      </div>
+
+      <div class="bg-white rounded-lg shadow hover:shadow-lg p-4 text-center">
+        <img src="images/bananas.jpg" alt="Banana" class="w-20 h-20 mx-auto mb-4">
+        <h2 class="text-lg font-semibold text-green-700">Banana</h2>
+        <p class="text-gray-600">₵16.00</p>
+        <button 
+        class="add-to-cart bg-teal-700 text-white px-4 py-1 rounded hover:bg-teal-600 text-sm"
+        data-name="Banana"
+        data-price="6.00">Add to Cart</button>
+      </div>
+
+      <div class="bg-white rounded-lg shadow hover:shadow-lg p-4 text-center">
+        <img src="images/oranges.jpg" alt="Orange" class="w-20 h-20 mx-auto mb-4">
+        <h2 class="text-lg font-semibold text-green-700">Orange</h2>
+        <p class="text-gray-600">₵18.00</p>
+        <button 
+        class="add-to-cart bg-teal-700 text-white px-4 py-1 rounded hover:bg-teal-600 text-sm"
+        data-name="Orange"
+        data-price="8.00">Add to Cart</button>
+      </div>
+
+      <div class="bg-white rounded-lg shadow hover:shadow-lg p-4 text-center">
+        <img src="images/pineapple.jpg" alt="Pineapple" class="w-20 h-20 mx-auto mb-4">
+        <h2 class="text-lg font-semibold text-green-700">Pineapple</h2>
+        <p class="text-gray-600">₵12.00</p>
+        <button 
+        class="add-to-cart bg-teal-700 text-white px-4 py-1 rounded hover:bg-teal-600 text-sm"
+        data-name="Pineapple 5g"
+        data-price="12.00">Add to Cart</button>
+      </div>
+
+      <div class="bg-white rounded-lg shadow hover:shadow-lg p-4 text-center">
+        <img src="images/watermelon.jpg" alt="Watermelon" class="w-20 h-20 mx-auto mb-4">
+        <h2 class="text-lg font-semibold text-green-700">Watermelon</h2>
+        <p class="text-gray-600">₵25.00</p>
+        <button 
+        class="add-to-cart bg-teal-700 text-white px-4 py-1 rounded hover:bg-teal-600 text-sm"
+        data-name="Watermelon 10g"
+        data-price="25.00">Add to Cart</button>
+      </div>
+
+      <div class="bg-white rounded-lg shadow hover:shadow-lg p-4 text-center">
+        <img src="images/mango1.jpeg" alt="Mango" class="w-20 h-20 mx-auto mb-4">
+        <h2 class="text-lg font-semibold text-green-700">Mango</h2>
+        <p class="text-gray-600">₵9.50</p>
+        <button 
+        class="add-to-cart bg-teal-700 text-white px-4 py-1 rounded hover:bg-teal-600 text-sm"
+        data-name="Mango"
+        data-price="9.50">Add to Cart</button>
+      </div>
+
+      <div class="bg-white rounded-lg shadow hover:shadow-lg p-4 text-center">
+        <img src="images/dragonfruit1.jpeg" alt="Dragon Fruit" class="w-20 h-20 mx-auto mb-4">
+        <h2 class="text-lg font-semibold text-green-700">Dragon Fruit</h2>
+        <p class="text-gray-600">₵52.00</p>
+        <button 
+        class="add-to-cart bg-teal-700 text-white px-4 py-1 rounded hover:bg-teal-600 text-sm"
+        data-name="Dragon Fruit"
+        data-price="52.00">Add to Cart</button>
+      </div>
+
+      <div class="bg-white rounded-lg shadow hover:shadow-lg p-4 text-center">
+        <img src="images/strawberries.jpg" alt="Strawberry" class="w-20 h-20 mx-auto mb-4">
+        <h2 class="text-lg font-semibold text-green-700">Strawberry</h2>
+        <p class="text-gray-600">₵16.00</p>
+        <button 
+        class="add-to-cart bg-teal-700 text-white px-4 py-1 rounded hover:bg-teal-600 text-sm"
+        data-name="Strawberry 5g"
+        data-price="16.00">Add to Cart</button>
+      </div>
+
+      <div class="bg-white rounded-lg shadow hover:shadow-lg p-4 text-center">
+        <img src="images/papaya.jpeg" alt="Papaya" class="w-20 h-20 mx-auto mb-4">
+        <h2 class="text-lg font-semibold text-green-700">Papaya</h2>
+        <p class="text-gray-600">₵15.50</p>
+        <button 
+        class="add-to-cart bg-teal-700 text-white px-4 py-1 rounded hover:bg-teal-600 text-sm"
+        data-name="Papaya "
+        data-price="15.50">Add to Cart</button>
+      </div>
+
+      <div class="bg-white rounded-lg shadow hover:shadow-lg p-4 text-center">
+        <img src="images/grapefruit.jpg" alt="Grapes" class="w-20 h-20 mx-auto mb-4">
+        <h2 class="text-lg font-semibold text-green-700">Grapes 5g</h2>
+        <p class="text-gray-600">₵28.00</p>
+        <button 
+        class="add-to-cart bg-teal-700 text-white px-4 py-1 rounded hover:bg-teal-600 text-sm"
+        data-name="Grapes 5g"
+        data-price="28.00">Add to Cart</button>
+      </div>
+
+      <div class="bg-white rounded-lg shadow hover:shadow-lg p-4 text-center">
+        <img src="images/pear.jpeg" alt="Pear" class="w-20 h-20 mx-auto mb-4">
+        <h2 class="text-lg font-semibold text-green-700">Pear</h2>
+        <p class="text-gray-600">₵12.00</p>
+        <button 
+        class="add-to-cart bg-teal-700 text-white px-4 py-1 rounded hover:bg-teal-600 text-sm"
+        data-name="Pear"
+        data-price="12.00">Add to Cart</button>
+      </div>
+
+      <div class="bg-white rounded-lg shadow hover:shadow-lg p-4 text-center">
+        <img src="images/guava1.jpg" alt="Guava" class="w-20 h-20 mx-auto mb-4">
+        <h2 class="text-lg font-semibold text-green-700">Guava</h2>
+        <p class="text-gray-600">₵10.50</p>
+        <button 
+        class="add-to-cart bg-teal-700 text-white px-4 py-1 rounded hover:bg-teal-600 text-sm"
+        data-name="Guava"
+        data-price="10.50">Add to Cart</button>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="bg-teal-900 text-yellow-100 text-sm text-center p-4 mt-8">
+    <div class="space-y-2">
+      <p>&copy; 2025 Akpoviri Grocery Hub. All rights reserved.</p>
+      <div class="flex justify-center space-x-4 text-white">
+        <a href="https://wa.me/your-number" target="_blank" class="hover:underline">WhatsApp</a>
+        <a href="https://x.com/yourhandle" target="_blank" class="hover:underline">X</a>
+        <a href="https://facebook.com/yourpage" target="_blank" class="hover:underline">Facebook</a>
+        <a href="https://instagram.com/yourhandle" target="_blank" class="hover:underline">Instagram</a>
+      </div>
+    </div>
+  </footer>
+
+
+  <script>
+    // Function to get cart from localStorage
+    function getCart() {
+      return JSON.parse(localStorage.getItem('cart')) || [];
+    }
+  
+    // Function to save cart to localStorage
+    function saveCart(cart) {
+      localStorage.setItem('cart', JSON.stringify(cart));
+    }
+  
+    // Add click event to all Add to Cart buttons
+    document.querySelectorAll('.add-to-cart').forEach(button => {
+      button.addEventListener('click', () => {
+        const name = button.getAttribute('data-name');
+        const price = parseFloat(button.getAttribute('data-price'));
+  
+        let cart = getCart();
+  
+        // Check if item already exists
+        const existingItem = cart.find(item => item.name === name);
+        if (existingItem) {
+          existingItem.quantity += 1;
+        } else {
+          cart.push({ name, price, quantity: 1 });
+        }
+  
+        saveCart(cart);
+        alert(`${name} added to cart!`);
+      });
+    });
+  </script>
+
+</body>
+</html>

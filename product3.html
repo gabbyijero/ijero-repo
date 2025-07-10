@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Rice Product Page</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-gray-100 p-6">
+    <!-- Top Strip -->
+  <div class="bg-gradient-to-r from-teal-800 to-teal-500 text-yellow-300 text-sm text-right p-2">
+    <p class="text-xs md:text-sm">Just order <strong class="block md:inline">IT WILL BE DELIVERED</strong></p>
+  </div>
+
+  <!-- Main Header -->
+  <header class="bg-white border-b border-gray-300 p-4 space-y-2">
+    
+    <!-- Nav Links -->
+    <div class="flex justify-center space-x-6 text-sm font-semibold">
+      <a href="index.html" class="text-gray-700 hover:text-teal-600">HOME</a>
+      <a href="about.html" class="text-gray-700 hover:text-teal-600">ABOUT</a>
+      <a href="logistics.html" class="text-gray-700 hover:text-teal-600">LOGISTICS</a>
+    </div>
+
+    <!-- Header Main -->
+    <div class="flex items-center justify-between gap-4">
+      <!-- Logo -->
+      <img src="logo-2078018_1280.png" alt="Logo" class="w-20 h-20">
+
+      <!-- Search -->
+      <div class="flex flex-1 items-center gap-2">
+        <input type="text" placeholder="Search products" class="flex-1 px-4 py-2 border rounded-md border-gray-300 focus:ring-2 focus:ring-teal-500" />
+        <button class="px-4 py-2 bg-teal-700 hover:bg-teal-600 text-white rounded-md">SEARCH</button>
+      </div>
+
+      <!-- Nav Right -->
+      <div class="flex items-center space-x-4 relative">
+        <!-- Account Dropdown -->
+        <div class="relative group">
+          <div class="cursor-pointer font-medium flex items-center gap-1">
+            👤 Account ⌄
+          </div>
+          <div class="absolute right-0 top-full mt-2 hidden group-hover:block bg-white shadow-lg border rounded-lg w-44 z-50">
+            <button onclick="openLoginModal()" class="w-full text-left px-4 py-2 text-sm hover:bg-yellow-300">SIGN IN</button>
+            <a href="#" class="block px-4 py-2 text-sm hover:bg-yellow-300">👤 My Account</a>
+            <a href="#" class="block px-4 py-2 text-sm hover:bg-yellow-300">📦 Orders</a>
+            <a href="#" class="block px-4 py-2 text-sm hover:bg-yellow-300">❤️ Saved Items</a>
+          </div>
+        </div>
+
+        <div class="cursor-pointer">❓ Help</div>
+        <a href="cart.html" target="_blank" class="cursor-pointer hover:underline text-teal-700">🛒 Cart</a>
+      </div>
+    </div>
+  </header>
+  <div class="max-w-5xl mx-auto">
+    
+
+    <!-- MAIN PRODUCT -->
+    <div class="bg-white rounded shadow p-6 mb-10">
+      <div class="flex flex-col md:flex-row gap-6">
+        <img src="mamagoldrice.jpg" alt="Mama Gold Rice" class="w-64 h-64 object-cover rounded">
+        <div>
+          <h2 class="text-2xl font-semibold">Mama Gold Rice 50kg</h2>
+          <p class="text-gray-700 mt-2">Premium quality long grain rice. Smooth texture, delicious aroma.</p>
+          <p class="text-xl font-bold mt-4 text-teal-600">$24.50</p>
+          <button onclick="addToCart('Mama Gold Rice 50kg', 19.99)"
+            class="mt-4 px-4 py-2 bg-teal-600 text-white rounded hover:bg-teal-700">Add to Cart</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- RELATED PRODUCTS -->
+    <h2 class="text-2xl font-bold mb-4">🛒 Other Rice Brands</h2>
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+      <div class="bg-white p-4 rounded shadow">
+        <img src="cindyrice.jpg" alt="Cindy Perfume Rice" class="h-40 w-full object-cover rounded">
+        <h3 class="mt-2 font-semibold">Cindy Perfume Rice</h3>
+        <p class="text-teal-600">$19.99</p>
+        <button onclick="addToCart('Royal Umbrella Rice 50kg', 24.50)"
+          class="mt-2 px-3 py-2 bg-teal-500 text-white rounded hover:bg-teal-600">Add to Cart</button>
+      </div>
+
+      <div class="bg-white p-4 rounded shadow">
+        <img src="fortunerice.jpg" alt="Fortune rice" class="h-40 w-full object-cover rounded">
+        <h3 class="mt-2 font-semibold">Fortune Parboiled Rice 50kg</h3>
+        <p class="text-teal-600">$21.99</p>
+        <button onclick="addToCart('Fortune Rice 50kg', 21.99)"
+          class="mt-2 px-3 py-2 bg-teal-500 text-white rounded hover:bg-teal-600">Add to Cart</button>
+      </div>
+
+      <div class="bg-white p-4 rounded shadow">
+        <img src="delightrice.jpg" alt="Delight Perfume Rice" class="h-40 w-full object-cover rounded">
+        <h3 class="mt-2 font-semibold">Delight Perfume Rice 50kg</h3>
+        <p class="text-teal-600">$22.49</p>
+        <button onclick="addToCart('delight perfume Rice 50kg', 22.49)"
+          class="mt-2 px-3 py-2 bg-teal-500 text-white rounded hover:bg-teal-600">Add to Cart</button>
+      </div>
+
+      <div class="bg-white p-4 rounded shadow">
+        <img src="delightrice.jpg" alt="Delight Perfume Rice" class="h-40 w-full object-cover rounded">
+        <h3 class="mt-2 font-semibold">Delight Perfume Rice 50kg</h3>
+        <p class="text-teal-600">$22.49</p>
+        <button onclick="addToCart('delight perfume Rice 50kg', 22.49)"
+          class="mt-2 px-3 py-2 bg-teal-500 text-white rounded hover:bg-teal-600">Add to Cart</button>
+      </div>
+
+      <div class="bg-white p-4 rounded shadow">
+        <img src="delightrice.jpg" alt="Delight Perfume Rice" class="h-40 w-full object-cover rounded">
+        <h3 class="mt-2 font-semibold">Delight Perfume Rice 50kg</h3>
+        <p class="text-teal-600">$22.49</p>
+        <button onclick="addToCart('delight perfume Rice 50kg', 22.49)"
+          class="mt-2 px-3 py-2 bg-teal-500 text-white rounded hover:bg-teal-600">Add to Cart</button>
+      </div>
+
+      <div class="bg-white p-4 rounded shadow">
+        <img src="delightrice.jpg" alt="Delight Perfume Rice" class="h-40 w-full object-cover rounded">
+        <h3 class="mt-2 font-semibold">Delight Perfume Rice 50kg</h3>
+        <p class="text-teal-600">$22.49</p>
+        <button onclick="addToCart('delight perfume Rice 50kg', 22.49)"
+          class="mt-2 px-3 py-2 bg-teal-500 text-white rounded hover:bg-teal-600">Add to Cart</button>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    function addToCart(name, price) {
+      const cart = JSON.parse(localStorage.getItem('cart')) || [];
+      const existingItem = cart.find(item => item.name === name);
+      if (existingItem) {
+        existingItem.quantity += 1;
+      } else {
+        cart.push({ name, price, quantity: 1 });
+      }
+      localStorage.setItem('cart', JSON.stringify(cart));
+      alert(`${name} added to cart!`);
+    }
+  </script>
+</body>
+</html>

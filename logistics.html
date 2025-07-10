@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Logistics - Ijero Groceries</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-gray-100 font-sans text-gray-800">
+
+  <!-- Header -->
+  <header class="bg-white shadow p-4 flex items-center justify-between">
+    <div class="flex items-center gap-4">
+      <img src="logo-2078018_1280.png" alt="Ijero Logo" class="w-12 h-12">
+      <h1 class="text-xl font-bold text-teal-700">Ijero Groceries</h1>
+    </div>
+    <nav class="flex gap-6 text-sm font-semibold text-gray-600">
+      <a href="index.html" class="hover:text-teal-600">Home</a>
+      <a href="products.html" class="hover:text-teal-600">Products</a>
+      <a href="checkout.html" class="hover:text-teal-600">Checkout</a>
+      <a href="about.html" class="hover:text-teal-600">About</a>
+      <a href="logistics.html" class="text-teal-700 underline">Logistics</a>
+    </nav>
+  </header>
+
+  <!-- Main Content -->
+  <main class="max-w-5xl mx-auto p-6 mt-6 bg-white rounded shadow">
+    <h2 class="text-3xl font-bold text-teal-700 mb-4">🚚 Our Logistics & Delivery</h2>
+    <p class="text-lg mb-6">At <strong>Ijero Groceries</strong>, we ensure fast, safe and efficient delivery using trusted logistics partners and real-time tracking support.</p>
+
+    <!-- Delivery Details -->
+    <div class="grid md:grid-cols-2 gap-6 mb-10">
+      <div class="bg-gray-50 p-4 rounded shadow">
+        <h3 class="text-xl font-semibold text-gray-700 mb-2">📍 Delivery Coverage</h3>
+        <ul class="list-disc pl-5 space-y-1 text-sm">
+          <li>Accra Metropolis</li>
+          <li>Tema Communities 1–25</li>
+          <li>Ashaiman & Spintex Road</li>
+          <li>Adenta, Madina, Kasoa</li>
+        </ul>
+      </div>
+
+      <div class="bg-gray-50 p-4 rounded shadow">
+        <h3 class="text-xl font-semibold text-gray-700 mb-2">⏱ Speed Options</h3>
+        <ul class="list-disc pl-5 space-y-1 text-sm">
+          <li>Same-day for orders before 12PM</li>
+          <li>Next-day for late-day orders</li>
+          <li>Scheduled bulk orders</li>
+        </ul>
+      </div>
+
+      <div class="bg-gray-50 p-4 rounded shadow">
+        <h3 class="text-xl font-semibold text-gray-700 mb-2">🚗 Delivery Vehicles</h3>
+        <ul class="list-disc pl-5 space-y-1 text-sm">
+          <li>Motorbikes for urgent packages</li>
+          <li>Vans for household deliveries</li>
+          <li>Trucks for bulk or business orders</li>
+        </ul>
+      </div>
+
+      <div class="bg-gray-50 p-4 rounded shadow">
+        <h3 class="text-xl font-semibold text-gray-700 mb-2">📦 Safe Packaging</h3>
+        <ul class="list-disc pl-5 space-y-1 text-sm">
+          <li>Sealed, hygienic packaging</li>
+          <li>Cold-chain for perishables</li>
+          <li>Fragile-item protection</li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- 🚨 Order Tracking System -->
+    <div class="mt-12 bg-teal-50 p-6 rounded shadow">
+      <h3 class="text-2xl font-bold text-teal-700 mb-2">🔍 Track Your Order</h3>
+      <p class="mb-4">Enter your order ID below to check delivery status.</p>
+      <div class="flex gap-4 items-center">
+        <input type="text" id="orderIdInput" class="flex-1 border border-gray-300 p-2 rounded" placeholder="Enter your Order ID">
+        <button onclick="trackOrder()" class="bg-teal-600 hover:bg-teal-700 text-white px-4 py-2 rounded">Track</button>
+      </div>
+      <p id="trackingResult" class="mt-4 text-sm text-gray-700 font-medium"></p>
+    </div>
+
+    <!-- Logistics Partner Banner -->
+    <div class="mt-12 bg-white p-6 rounded shadow border border-gray-200">
+      <h3 class="text-2xl font-bold text-teal-700 mb-4">🤝 Delivery Partners</h3>
+      <div class="flex gap-8 items-center">
+        <img src="./images/bolt.jpg" alt="Bolt Logo" class="h-10">
+        <img src="./images/glovo.jpg" alt="glovo Logo" class="h-10">
+        <img src="https://cdn.worldvectorlogo.com/logos/dhl-1.svg" alt="DHL Logo" class="h-10">
+      </div>
+    </div>
+
+    <!-- Support -->
+    <div class="mt-12 bg-yellow-50 border-l-4 border-yellow-400 p-4 text-yellow-800">
+      <p><strong>Need help with your order?</strong> Call or WhatsApp us at <strong>+233 593 216 121</strong>.</p>
+    </div>
+  </main>
+
+  <!-- Footer -->
+  <footer class="text-center text-sm text-gray-500 mt-10 p-4">
+    &copy; 1998–2025 Ijero Groceries, Tema Community 22, Ghana.
+  </footer>
+
+  <script>
+    function trackOrder() {
+      const orderId = document.getElementById("orderIdInput").value.trim();
+      const trackingResult = document.getElementById("trackingResult");
+
+      // Mock tracking result (replace with real backend/API logic)
+      if (!orderId) {
+        trackingResult.textContent = "Please enter a valid Order ID.";
+      } else if (orderId === "12345") {
+        trackingResult.textContent = "Order 12345: Out for delivery. Expected by 4:30 PM today.";
+      } else if (orderId === "67890") {
+        trackingResult.textContent = "Order 67890: Delivered successfully at 2:15 PM.";
+      } else {
+        trackingResult.textContent = `Order ${orderId}: Tracking info not found. Please contact support.`;
+      }
+    }
+  </script>
+</body>
+</html>

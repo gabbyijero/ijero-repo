@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Product Page</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-gray-100 text-gray-800">
+
+  <!-- Top Strip -->
+  <div class="bg-gradient-to-r from-teal-800 to-teal-500 text-yellow-300 text-sm text-right p-2">
+    <p class="text-xs md:text-sm">Just order <strong class="block md:inline">IT WILL BE DELIVERED</strong></p>
+  </div>
+
+  <!-- Main Header -->
+  <header class="bg-white border-b border-gray-300 p-4 space-y-2">
+    
+    <!-- Nav Links -->
+    <div class="flex justify-center space-x-6 text-sm font-semibold">
+      <a href="#" class="text-gray-700 hover:text-teal-600">HOME</a>
+      <a href="#" class="text-gray-700 hover:text-teal-600">ABOUT</a>
+      <a href="#" class="text-gray-700 hover:text-teal-600">LOGISTICS</a>
+    </div>
+
+    <!-- Header Main -->
+    <div class="flex items-center justify-between gap-4">
+      <!-- Logo -->
+      <img src="logo-2078018_1280.png" alt="Logo" class="w-20 h-20">
+
+      <!-- Search -->
+      <div class="flex flex-1 items-center gap-2">
+        <input type="text" placeholder="Search products" class="flex-1 px-4 py-2 border rounded-md border-gray-300 focus:ring-2 focus:ring-teal-500" />
+        <button class="px-4 py-2 bg-teal-700 hover:bg-teal-600 text-white rounded-md">SEARCH</button>
+      </div>
+
+      <!-- Nav Right -->
+      <div class="flex items-center space-x-4 relative">
+        <!-- Account Dropdown -->
+        <div class="relative group">
+          <div class="cursor-pointer font-medium flex items-center gap-1">
+            👤 Account ⌄
+          </div>
+          <div class="absolute right-0 top-full mt-2 hidden group-hover:block bg-white shadow-lg border rounded-lg w-44 z-50">
+            <button onclick="openLoginModal()" class="w-full text-left px-4 py-2 text-sm hover:bg-yellow-300">SIGN IN</button>
+            <a href="#" class="block px-4 py-2 text-sm hover:bg-yellow-300">👤 My Account</a>
+            <a href="#" class="block px-4 py-2 text-sm hover:bg-yellow-300">📦 Orders</a>
+            <a href="#" class="block px-4 py-2 text-sm hover:bg-yellow-300">❤️ Saved Items</a>
+          </div>
+        </div>
+
+        <div class="cursor-pointer">❓ Help</div>
+        <div class="cursor-pointer">🛒 Cart</div>
+      </div>
+    </div>
+  </header>
+
+  <!-- Category Section -->
+<section class="py-10 px-4 sm:px-8 md:px-16 bg-white">
+  <h2 class="text-3xl font-bold text-center text-green-700 mb-8">Browse by Category</h2>
+
+  <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-6">
+    <!-- Category Card: Fruits -->
+    <a href="category.html?name=fruits" class="flex flex-col items-center p-4 bg-green-50 rounded-lg shadow hover:shadow-lg transition hover:bg-green-100">
+      <img src="https://cdn-icons-png.flaticon.com/512/3075/3075977.png" alt="Fruits" class="w-16 h-16 mb-3">
+      <h3 class="text-lg font-semibold text-green-800">Fruits</h3>
+    </a>
+
+    <!-- Category Card: Vegetables -->
+    <a href="category.html?name=vegetables" class="flex flex-col items-center p-4 bg-green-50 rounded-lg shadow hover:shadow-lg transition hover:bg-green-100">
+      <img src="https://cdn-icons-png.flaticon.com/512/3075/3075944.png" alt="Vegetables" class="w-16 h-16 mb-3">
+      <h3 class="text-lg font-semibold text-green-800">Vegetables</h3>
+    </a>
+
+    <!-- Category Card: Dairy -->
+    <a href="category.html?name=dairy" class="flex flex-col items-center p-4 bg-green-50 rounded-lg shadow hover:shadow-lg transition hover:bg-green-100">
+      <img src="https://cdn-icons-png.flaticon.com/512/3081/3081924.png" alt="Dairy" class="w-16 h-16 mb-3">
+      <h3 class="text-lg font-semibold text-green-800">Dairy</h3>
+    </a>
+
+    <!-- Category Card: Grains -->
+    <a href="category.html?name=grains" class="flex flex-col items-center p-4 bg-green-50 rounded-lg shadow hover:shadow-lg transition hover:bg-green-100">
+      <img src="https://cdn-icons-png.flaticon.com/512/3075/3075953.png" alt="Grains" class="w-16 h-16 mb-3">
+      <h3 class="text-lg font-semibold text-green-800">Grains</h3>
+    </a>
+
+    <!-- Category Card: Beverages -->
+    <a href="category.html?name=beverages" class="flex flex-col items-center p-4 bg-green-50 rounded-lg shadow hover:shadow-lg transition hover:bg-green-100">
+      <img src="https://cdn-icons-png.flaticon.com/512/3081/3081990.png" alt="Beverages" class="w-16 h-16 mb-3">
+      <h3 class="text-lg font-semibold text-green-800">Beverages</h3>
+    </a>
+
+    <!-- Category Card: Snacks -->
+    <a href="category.html?name=snacks" class="flex flex-col items-center p-4 bg-green-50 rounded-lg shadow hover:shadow-lg transition hover:bg-green-100">
+      <img src="https://cdn-icons-png.flaticon.com/512/3081/3081976.png" alt="Snacks" class="w-16 h-16 mb-3">
+      <h3 class="text-lg font-semibold text-green-800">Snacks</h3>
+    </a>
+  </div>
+</section>
+
+
+</body>
+</html>
